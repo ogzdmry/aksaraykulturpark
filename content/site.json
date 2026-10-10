@@ -1,0 +1,469 @@
+{
+  "genel": {
+    "saatler": "Her gün 10:00 – 23:00",
+    "saat_kisa": "10:00 – 23:00",
+    "adres": "Taşpazar Mah., Pamucak Cd., Aksaray Merkez / Aksaray",
+    "adres_kisa": "Taşpazar Mah., Aksaray",
+    "instagram": "aksaraykulturpark",
+    "footer_metin": "Aksaray kent merkezinde alışveriş, eğlence, lezzet ve yeşil alan tek çatı altında."
+  },
+  "slaytlar": [
+    {
+      "gorsel": "/images/park-genel.webp",
+      "ust_yazi": "Aksaray kent merkezinde",
+      "baslik": "Aksaray'ın buluşma noktası",
+      "metin": "Alışveriş merkezi, lunapark, çay bahçeleri, yüzme havuzu, halı saha, sokak lezzetleri ve restoranlar tek çatı altında.",
+      "alan": ""
+    },
+    {
+      "gorsel": "/images/dolap-gunbatimi.webp",
+      "ust_yazi": "Lunapark",
+      "baslik": "Akşamları ışıl ışıl",
+      "metin": "Dönme dolaptan rengârenk oyuncaklara, çocuklar ve gençler için eğlence parkın tam ortasında.",
+      "alan": "lunapark"
+    },
+    {
+      "gorsel": "/images/cay-bahcesi.webp",
+      "ust_yazi": "Çay Bahçeleri",
+      "baslik": "Çınar altında bir çay",
+      "metin": "Asırlık ağaçların gölgesinde, sohbetin ve demli çayın tadını çıkarın.",
+      "alan": "cay"
+    },
+    {
+      "gorsel": "/images/havuz.webp",
+      "ust_yazi": "Yüzme Havuzu",
+      "baslik": "Yaz günlerinde serinlik",
+      "metin": "Kaydıraklı havuz ve havuz başı keyfi şehrin ortasında.",
+      "alan": "havuz"
+    },
+    {
+      "gorsel": "/images/iskele.webp",
+      "ust_yazi": "Yürüyüş Yolları",
+      "baslik": "Gün batımında yürüyüş",
+      "metin": "Ağaçlı yollar, iskele ve köprülerle sabahtan akşama yürüyüş keyfi.",
+      "alan": "yuruyus"
+    }
+  ],
+  "alanlar_bolumu": {
+    "ust_yazi": "Şehrin kalbinde mola",
+    "baslik": "Aradığın her şey tek çatı altında",
+    "metin": "Alışveriş merkezinden lunaparka, çay bahçelerinden yüzme havuzuna; Kültürpark'ta her ziyarette başka bir deneyim sizi bekliyor."
+  },
+  "alanlar": [
+    {
+      "id": "avm",
+      "ad": "Alışveriş Merkezi",
+      "kisa": "Mağazalar ve butikler",
+      "metin": "Parkın içindeki alışveriş merkezinde mağazalar ve butikler bir arada. Alışverişinizi yaptıktan sonra birkaç adımda çay bahçesine ya da yürüyüş yoluna geçin.",
+      "maddeler": [
+        "Mağazalar ve butikler",
+        "Kampanyalar ve açılış etkinlikleri",
+        "Yürüme mesafesinde kafe ve restoranlar"
+      ],
+      "gorseller": [
+        "/images/magaza-acilis.webp",
+        "/images/gozluk.jpg"
+      ],
+      "kategori": "alisveris"
+    },
+    {
+      "id": "lunapark",
+      "ad": "Lunapark",
+      "kisa": "Çocuklar ve gençler için",
+      "metin": "Dönme dolap, adrenalin dolu oyuncaklar ve rengârenk ışıklar. Akşam olunca Kültürpark'ın en hareketli köşesi lunapark.",
+      "maddeler": [
+        "Dönme dolap",
+        "Çocuklara ve gençlere uygun oyuncaklar",
+        "Akşamları ışıl ışıl atmosfer"
+      ],
+      "gorseller": [
+        "/images/dolap-gunbatimi.webp",
+        "/images/lunapark.jpg",
+        "/images/lunapark-renkli.webp"
+      ],
+      "kategori": "eglence"
+    },
+    {
+      "id": "cay",
+      "ad": "Çay Bahçeleri",
+      "kisa": "Hasandağı manzarasında çay",
+      "metin": "Asırlık çınarların gölgesinde, aile çay bahçelerinde demli çay ve sohbet. Akşamları canlı müzikle ayrı bir keyif.",
+      "maddeler": [
+        "Aile çay bahçeleri",
+        "Çınar gölgesinde oturma alanları",
+        "Akşamları canlı müzik"
+      ],
+      "gorseller": [
+        "/images/cay-bahcesi.webp",
+        "/images/cinaralti.jpg",
+        "/images/cay-tente.webp"
+      ],
+      "kategori": "dinlenme"
+    },
+    {
+      "id": "sokak",
+      "ad": "Sokak Lezzetleri",
+      "kisa": "Yöresel ve sokak tatları",
+      "metin": "Közde mısırdan midyeye, tatlıdan serinleten içeceklere; parkta yürürken atıştırabileceğiniz sokak lezzetleri.",
+      "maddeler": [
+        "Közde mısır ve atıştırmalıklar",
+        "Tatlı ve dondurma",
+        "Sıcak ve soğuk içecekler"
+      ],
+      "gorseller": [
+        "/images/misir.jpg",
+        "/images/sokak-izgara.webp",
+        "/images/sokak-satici.webp",
+        "/images/sucre.jpg"
+      ],
+      "kategori": "lezzet"
+    },
+    {
+      "id": "havuz",
+      "ad": "Yüzme Havuzu",
+      "kisa": "Yaz günlerinde serinlik",
+      "metin": "Liva Yüzme Havuzu'nda kaydıraklar ve havuz başı oturma alanlarıyla yaz günlerini şehrin ortasında serin geçirin.",
+      "maddeler": [
+        "Kaydıraklı havuz",
+        "Havuz başı dinlenme alanı",
+        "Yaz günlerinde serin bir mola"
+      ],
+      "gorseller": [
+        "/images/havuz.webp"
+      ],
+      "kategori": "spor"
+    },
+    {
+      "id": "halisaha",
+      "ad": "Halı Saha",
+      "kisa": "Arkadaşlarla maç keyfi",
+      "metin": "Parkın içindeki halı sahada arkadaşlarınızla maç yapın, maçtan sonra çay bahçesinde soluklanın.",
+      "maddeler": [
+        "Halı saha",
+        "Akşam maçları",
+        "Maç sonrası çay bahçesi"
+      ],
+      "gorseller": [],
+      "kategori": "spor"
+    },
+    {
+      "id": "restoran",
+      "ad": "Restoranlar",
+      "kisa": "Keyifli yemek molası",
+      "metin": "Odun ateşinde ızgaralardan serpme kahvaltıya; parkın restoranlarında ailenizle keyifli bir yemek molası verin.",
+      "maddeler": [
+        "Izgara ve ev yemekleri",
+        "Kahvaltı seçenekleri",
+        "Aileye uygun salonlar ve açık alanlar"
+      ],
+      "gorseller": [
+        "/images/damla.jpg",
+        "/images/restoran-salon.webp",
+        "/images/izgara.jpg"
+      ],
+      "kategori": "lezzet"
+    },
+    {
+      "id": "ticaret",
+      "ad": "Ticaret Alanları",
+      "kisa": "Stantlar ve küçük işletmeler",
+      "metin": "Stantlar, tezgâhlar ve küçük işletmelerle Kültürpark'ta hareketli bir çarşı havası.",
+      "maddeler": [
+        "Stant ve tezgâhlar",
+        "Yerel işletmeler",
+        "Akşamları kalabalık ve canlı"
+      ],
+      "gorseller": [
+        "/images/ticaret-tezgah.webp",
+        "/images/ticaret-gece.webp",
+        "/images/gozluk.jpg"
+      ],
+      "kategori": "alisveris"
+    },
+    {
+      "id": "yuruyus",
+      "ad": "Yürüyüş Yolları",
+      "kisa": "Yürüyüş ve dinlenme",
+      "metin": "Ağaçlı yollar, iskele ve köprüler. Sabah yürüyüşü, akşam turu ya da gün batımında sakin bir mola için.",
+      "maddeler": [
+        "Ağaçlı yürüyüş yolları",
+        "Gün batımında iskele",
+        "Gece aydınlatmalı köprü"
+      ],
+      "gorseller": [
+        "/images/yuruyus-yolu.webp",
+        "/images/iskele.webp",
+        "/images/kopru-gece.webp",
+        "/images/yuruyus-sonbahar.webp"
+      ],
+      "kategori": "dinlenme"
+    },
+    {
+      "id": "hayvanat",
+      "ad": "Hayvanat Bahçesi",
+      "kisa": "Hayvanlarla tanışma",
+      "metin": "Çocukların en sevdiği köşelerden biri; hayvanları yakından görme ve tanıma fırsatı.",
+      "maddeler": [
+        "Çocuklar için eğitici bir gezi",
+        "Aileyle keşif"
+      ],
+      "gorseller": [],
+      "kategori": "eglence"
+    },
+    {
+      "id": "cocuk",
+      "ad": "Çocuk Oyun Alanları",
+      "kisa": "Minikler için",
+      "metin": "Çocuklar oyun alanlarında eğlenirken siz de yanı başındaki bankta ya da çay bahçesinde dinlenin.",
+      "maddeler": [
+        "Oyun grupları",
+        "Yeşil alan içinde",
+        "Ailelere yakın oturma alanları"
+      ],
+      "gorseller": [],
+      "kategori": "eglence"
+    }
+  ],
+  "gun_bolumu": {
+    "ust_yazi": "Kültürpark'ta bir gün",
+    "baslik": "Gün boyu keyif, akşam ışıl ışıl",
+    "metin": "Sabah yürüyüşünden gece lunaparkına kadar parkın her saati ayrı güzel."
+  },
+  "kartlar": [
+    {
+      "gorsel": "/images/yuruyus-yolu.webp",
+      "baslik": "Sabah yürüyüşü",
+      "metin": "Ağaçlı yollarda güne zinde başlayın.",
+      "alan": "yuruyus"
+    },
+    {
+      "gorsel": "/images/kopuklu-kahve.jpg",
+      "baslik": "Öğleden sonra kahve",
+      "metin": "Çınar gölgesinde bir fincan kahve.",
+      "alan": "cay"
+    },
+    {
+      "gorsel": "/images/misir.jpg",
+      "baslik": "Akşam atıştırmalığı",
+      "metin": "Közde mısır, tatlı ve serin içecekler.",
+      "alan": "sokak"
+    },
+    {
+      "gorsel": "/images/lunapark.jpg",
+      "baslik": "Gece lunaparkı",
+      "metin": "Işıklar yanınca eğlence başlıyor.",
+      "alan": "lunapark"
+    }
+  ],
+  "yesil_bolum": {
+    "gorsel": "/images/cinaralti.jpg",
+    "ust_yazi": "Yeşilin içinde",
+    "baslik": "Şehrin ortasında nefes alan bir park",
+    "metin": "Asırlık çınarların gölgesinde çay, ağaçlı yollarda yürüyüş, gün batımında iskelede bir mola. Kültürpark, Aksaray'ın kalbinde ailece vakit geçirmek için her şeyi bir araya getiriyor.",
+    "etiketler": [
+      "Hasandağı manzarası",
+      "Asırlık çınarlar",
+      "Yürüyüş yolları",
+      "Aileye uygun"
+    ]
+  },
+  "galeri": [
+    {
+      "gorsel": "/images/dolap-gunbatimi.webp",
+      "aciklama": "Gün batımında dönme dolap",
+      "kategori": "eglence",
+      "boyut": "genis"
+    },
+    {
+      "gorsel": "/images/cay-bahcesi.webp",
+      "aciklama": "Çay bahçesinde akşam",
+      "kategori": "dinlenme",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/havuz.webp",
+      "aciklama": "Liva Yüzme Havuzu",
+      "kategori": "spor",
+      "boyut": "uzun"
+    },
+    {
+      "gorsel": "/images/damla.jpg",
+      "aciklama": "Damla Restaurant",
+      "kategori": "lezzet",
+      "boyut": "uzun"
+    },
+    {
+      "gorsel": "/images/iskele.webp",
+      "aciklama": "Gün batımında iskele",
+      "kategori": "dinlenme",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/konser.jpg",
+      "aciklama": "Kültürpark'ta canlı konser",
+      "kategori": "eglence",
+      "boyut": "uzun"
+    },
+    {
+      "gorsel": "/images/kopru-gece.webp",
+      "aciklama": "Gece köprüde",
+      "kategori": "dinlenme",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/magaza-acilis.webp",
+      "aciklama": "Mağaza açılışı",
+      "kategori": "alisveris",
+      "boyut": "genis"
+    },
+    {
+      "gorsel": "/images/milkshake.jpg",
+      "aciklama": "Çilekli milkshake",
+      "kategori": "lezzet",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/yuruyus-sonbahar.webp",
+      "aciklama": "Sonbaharda yürüyüş",
+      "kategori": "dinlenme",
+      "boyut": "uzun"
+    },
+    {
+      "gorsel": "/images/kutlama.jpg",
+      "aciklama": "Parkta kutlama",
+      "kategori": "eglence",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/turk-kahvesi.jpg",
+      "aciklama": "Emirgan Cafe'de Türk kahvesi",
+      "kategori": "lezzet",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/ticaret-tezgah.webp",
+      "aciklama": "Akşam tezgâhları",
+      "kategori": "alisveris",
+      "boyut": "genis"
+    },
+    {
+      "gorsel": "/images/lunapark-renkli.webp",
+      "aciklama": "Işıl ışıl oyuncaklar",
+      "kategori": "eglence",
+      "boyut": "uzun"
+    },
+    {
+      "gorsel": "/images/izgara.jpg",
+      "aciklama": "Odun ateşinde ızgara",
+      "kategori": "lezzet",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/cinaralti.jpg",
+      "aciklama": "Çınaraltı aile çay bahçesi",
+      "kategori": "dinlenme",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/sokak-izgara.webp",
+      "aciklama": "Sokakta ızgara",
+      "kategori": "lezzet",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/yesil-alan.webp",
+      "aciklama": "Yeşil alan",
+      "kategori": "dinlenme",
+      "boyut": "genis"
+    },
+    {
+      "gorsel": "/images/aksam-cayi.jpg",
+      "aciklama": "Akşam çayı",
+      "kategori": "dinlenme",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/sucre.jpg",
+      "aciklama": "SUCRE Kültürpark",
+      "kategori": "lezzet",
+      "boyut": "uzun"
+    },
+    {
+      "gorsel": "/images/kahverengi-gece.jpg",
+      "aciklama": "Kahverengi Cafe",
+      "kategori": "dinlenme",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/midye.jpg",
+      "aciklama": "Midye",
+      "kategori": "lezzet",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/restoran-salon.webp",
+      "aciklama": "Restoran salonu",
+      "kategori": "lezzet",
+      "boyut": "genis"
+    },
+    {
+      "gorsel": "/images/kopuklu-kahve.jpg",
+      "aciklama": "Çınar gölgesinde kahve",
+      "kategori": "dinlenme",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/pasta.jpg",
+      "aciklama": "Ayaküstü tatlıları",
+      "kategori": "lezzet",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/yuruyus-aksam.webp",
+      "aciklama": "Akşam yürüyüşü",
+      "kategori": "dinlenme",
+      "boyut": "genis"
+    },
+    {
+      "gorsel": "/images/degirmen.jpg",
+      "aciklama": "Değirmen'de kahve molası",
+      "kategori": "lezzet",
+      "boyut": "normal"
+    },
+    {
+      "gorsel": "/images/gozluk.jpg",
+      "aciklama": "Gözlük mağazası",
+      "kategori": "alisveris",
+      "boyut": "normal"
+    }
+  ],
+  "videolar_bolumu": {
+    "metin": "Lunapark gecelerinden havuz keyfine; parkın enerjisini videolarla izleyin."
+  },
+  "videolar": [
+    {
+      "link": "https://www.instagram.com/reel/CRCbgQwFUDe/",
+      "baslik": "Lunapark geceleri"
+    },
+    {
+      "link": "https://www.instagram.com/reel/DagIR3ns9oL/",
+      "baslik": "Adrenalin burada başlıyor"
+    },
+    {
+      "link": "https://www.instagram.com/reel/DakWXDKsoYb/",
+      "baslik": "Liva Yüzme Havuzu"
+    },
+    {
+      "link": "https://www.instagram.com/reel/DaxJqPIociC/",
+      "baslik": "Çınaraltı'nda huzur"
+    },
+    {
+      "link": "https://www.instagram.com/reel/DanHTmZIj9S/",
+      "baslik": "Doğayla iç içe"
+    },
+    {
+      "link": "https://www.instagram.com/reel/CZHXVCMllUn/",
+      "baslik": "Kültürpark'ta kış"
+    }
+  ]
+}
