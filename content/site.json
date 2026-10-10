@@ -1,54 +1,68 @@
 {
-  "genel": {
-    "saatler": "Her gün 10:00 – 23:00",
-    "saat_kisa": "10:00 – 23:00",
-    "adres": "Taşpazar Mah., Pamucak Cd., Aksaray Merkez / Aksaray",
-    "adres_kisa": "Taşpazar Mah., Aksaray",
-    "instagram": "aksaraykulturpark",
-    "footer_metin": "Aksaray kent merkezinde alışveriş, eğlence, lezzet ve yeşil alan tek çatı altında."
+  "yesil_bolum": {
+    "gorsel": "/images/cinaralti.jpg",
+    "ust_yazi": "Yeşilin içinde",
+    "baslik": "Şehrin ortasında nefes alan bir park",
+    "metin": "Asırlık çınarların gölgesinde çay, ağaçlı yollarda yürüyüş, gün batımında iskelede bir mola. Kültürpark, Aksaray'ın kalbinde ailece vakit geçirmek için her şeyi bir araya getiriyor.",
+    "etiketler": [
+      "Hasandağı manzarası",
+      "Asırlık çınarlar",
+      "Yürüyüş yolları",
+      "Aileye uygun"
+    ]
   },
-  "slaytlar": [
+  "videolar": [
     {
-      "gorsel": "/images/park-genel.webp",
-      "ust_yazi": "Aksaray kent merkezinde",
-      "baslik": "Aksaray'ın buluşma noktası",
-      "metin": "Alışveriş merkezi, lunapark, çay bahçeleri, yüzme havuzu, halı saha, sokak lezzetleri ve restoranlar tek çatı altında.",
-      "alan": ""
+      "link": "https://www.instagram.com/reel/CRCbgQwFUDe/",
+      "baslik": "Lunapark geceleri"
     },
     {
-      "gorsel": "/images/dolap-gunbatimi.webp",
-      "ust_yazi": "Lunapark",
-      "baslik": "Akşamları ışıl ışıl",
-      "metin": "Dönme dolaptan rengârenk oyuncaklara, çocuklar ve gençler için eğlence parkın tam ortasında.",
-      "alan": "lunapark"
+      "link": "https://www.instagram.com/reel/DagIR3ns9oL/",
+      "baslik": "Adrenalin burada başlıyor"
     },
     {
-      "gorsel": "/images/cay-bahcesi.webp",
-      "ust_yazi": "Çay Bahçeleri",
-      "baslik": "Çınar altında bir çay",
-      "metin": "Asırlık ağaçların gölgesinde, sohbetin ve demli çayın tadını çıkarın.",
+      "link": "https://www.instagram.com/reel/DakWXDKsoYb/",
+      "baslik": "Liva Yüzme Havuzu"
+    },
+    {
+      "link": "https://www.instagram.com/reel/DaxJqPIociC/",
+      "baslik": "Çınaraltı'nda huzur"
+    },
+    {
+      "link": "https://www.instagram.com/reel/DanHTmZIj9S/",
+      "baslik": "Doğayla iç içe"
+    },
+    {
+      "link": "https://www.instagram.com/reel/CZHXVCMllUn/",
+      "baslik": "Kültürpark'ta kış"
+    }
+  ],
+  "kartlar": [
+    {
+      "gorsel": "/images/yuruyus-yolu.webp",
+      "baslik": "Sabah yürüyüşü",
+      "metin": "Ağaçlı yollarda güne zinde başlayın.",
+      "alan": "yuruyus"
+    },
+    {
+      "gorsel": "/images/kopuklu-kahve.jpg",
+      "baslik": "Öğleden sonra kahve",
+      "metin": "Çınar gölgesinde bir fincan kahve.",
       "alan": "cay"
     },
     {
-      "gorsel": "/images/havuz.webp",
-      "ust_yazi": "Yüzme Havuzu",
-      "baslik": "Yaz günlerinde serinlik",
-      "metin": "Kaydıraklı havuz ve havuz başı keyfi şehrin ortasında.",
-      "alan": "havuz"
+      "gorsel": "/images/misir.jpg",
+      "baslik": "Akşam atıştırmalığı",
+      "metin": "Közde mısır, tatlı ve serin içecekler.",
+      "alan": "sokak"
     },
     {
-      "gorsel": "/images/iskele.webp",
-      "ust_yazi": "Yürüyüş Yolları",
-      "baslik": "Gün batımında yürüyüş",
-      "metin": "Ağaçlı yollar, iskele ve köprülerle sabahtan akşama yürüyüş keyfi.",
-      "alan": "yuruyus"
+      "gorsel": "/images/lunapark.jpg",
+      "baslik": "Gece lunaparkı",
+      "metin": "Işıklar yanınca eğlence başlıyor.",
+      "alan": "lunapark"
     }
   ],
-  "alanlar_bolumu": {
-    "ust_yazi": "Şehrin kalbinde mola",
-    "baslik": "Aradığın her şey tek çatı altında",
-    "metin": "Alışveriş merkezinden lunaparka, çay bahçelerinden yüzme havuzuna; Kültürpark'ta her ziyarette başka bir deneyim sizi bekliyor."
-  },
   "alanlar": [
     {
       "id": "avm",
@@ -61,7 +75,7 @@
         "Yürüme mesafesinde kafe ve restoranlar"
       ],
       "gorseller": [
-        "/images/magaza-acilis.webp",
+        "/images/images-5-.jpeg",
         "/images/gozluk.jpg"
       ],
       "kategori": "alisveris"
@@ -224,49 +238,6 @@
       "kategori": "eglence"
     }
   ],
-  "gun_bolumu": {
-    "ust_yazi": "Kültürpark'ta bir gün",
-    "baslik": "Gün boyu keyif, akşam ışıl ışıl",
-    "metin": "Sabah yürüyüşünden gece lunaparkına kadar parkın her saati ayrı güzel."
-  },
-  "kartlar": [
-    {
-      "gorsel": "/images/yuruyus-yolu.webp",
-      "baslik": "Sabah yürüyüşü",
-      "metin": "Ağaçlı yollarda güne zinde başlayın.",
-      "alan": "yuruyus"
-    },
-    {
-      "gorsel": "/images/kopuklu-kahve.jpg",
-      "baslik": "Öğleden sonra kahve",
-      "metin": "Çınar gölgesinde bir fincan kahve.",
-      "alan": "cay"
-    },
-    {
-      "gorsel": "/images/misir.jpg",
-      "baslik": "Akşam atıştırmalığı",
-      "metin": "Közde mısır, tatlı ve serin içecekler.",
-      "alan": "sokak"
-    },
-    {
-      "gorsel": "/images/lunapark.jpg",
-      "baslik": "Gece lunaparkı",
-      "metin": "Işıklar yanınca eğlence başlıyor.",
-      "alan": "lunapark"
-    }
-  ],
-  "yesil_bolum": {
-    "gorsel": "/images/cinaralti.jpg",
-    "ust_yazi": "Yeşilin içinde",
-    "baslik": "Şehrin ortasında nefes alan bir park",
-    "metin": "Asırlık çınarların gölgesinde çay, ağaçlı yollarda yürüyüş, gün batımında iskelede bir mola. Kültürpark, Aksaray'ın kalbinde ailece vakit geçirmek için her şeyi bir araya getiriyor.",
-    "etiketler": [
-      "Hasandağı manzarası",
-      "Asırlık çınarlar",
-      "Yürüyüş yolları",
-      "Aileye uygun"
-    ]
-  },
   "galeri": [
     {
       "gorsel": "/images/dolap-gunbatimi.webp",
@@ -437,33 +408,62 @@
       "boyut": "normal"
     }
   ],
+  "genel": {
+    "saatler": "Her gün 10:00 – 23:00",
+    "saat_kisa": "10:00 – 23:00",
+    "adres": "Taşpazar Mah., Pamucak Cd., Aksaray Merkez / Aksaray",
+    "adres_kisa": "Taşpazar Mah., Aksaray",
+    "instagram": "aksaraykulturpark",
+    "footer_metin": "Aksaray kent merkezinde alışveriş, eğlence, lezzet ve yeşil alan tek çatı altında."
+  },
+  "alanlar_bolumu": {
+    "ust_yazi": "Şehrin kalbinde mola",
+    "baslik": "Aradığın her şey tek çatı altında",
+    "metin": "Alışveriş merkezinden lunaparka, çay bahçelerinden yüzme havuzuna; Kültürpark'ta her ziyarette başka bir deneyim sizi bekliyor."
+  },
+  "slaytlar": [
+    {
+      "gorsel": "/images/park-genel.webp",
+      "ust_yazi": "Aksaray kent merkezinde",
+      "baslik": "Aksaray'ın buluşma noktası",
+      "metin": "Alışveriş merkezi, lunapark, çay bahçeleri, yüzme havuzu, halı saha, sokak lezzetleri ve restoranlar tek çatı altında.",
+      "alan": ""
+    },
+    {
+      "gorsel": "/images/dolap-gunbatimi.webp",
+      "ust_yazi": "Lunapark",
+      "baslik": "Akşamları ışıl ışıl",
+      "metin": "Dönme dolaptan rengârenk oyuncaklara, çocuklar ve gençler için eğlence parkın tam ortasında.",
+      "alan": "lunapark"
+    },
+    {
+      "gorsel": "/images/cay-bahcesi.webp",
+      "ust_yazi": "Çay Bahçeleri",
+      "baslik": "Çınar altında bir çay",
+      "metin": "Asırlık ağaçların gölgesinde, sohbetin ve demli çayın tadını çıkarın.",
+      "alan": "cay"
+    },
+    {
+      "gorsel": "/images/havuz.webp",
+      "ust_yazi": "Yüzme Havuzu",
+      "baslik": "Yaz günlerinde serinlik",
+      "metin": "Kaydıraklı havuz ve havuz başı keyfi şehrin ortasında.",
+      "alan": "havuz"
+    },
+    {
+      "gorsel": "/images/iskele.webp",
+      "ust_yazi": "Yürüyüş Yolları",
+      "baslik": "Gün batımında yürüyüş",
+      "metin": "Ağaçlı yollar, iskele ve köprülerle sabahtan akşama yürüyüş keyfi.",
+      "alan": "yuruyus"
+    }
+  ],
   "videolar_bolumu": {
     "metin": "Lunapark gecelerinden havuz keyfine; parkın enerjisini videolarla izleyin."
   },
-  "videolar": [
-    {
-      "link": "https://www.instagram.com/reel/CRCbgQwFUDe/",
-      "baslik": "Lunapark geceleri"
-    },
-    {
-      "link": "https://www.instagram.com/reel/DagIR3ns9oL/",
-      "baslik": "Adrenalin burada başlıyor"
-    },
-    {
-      "link": "https://www.instagram.com/reel/DakWXDKsoYb/",
-      "baslik": "Liva Yüzme Havuzu"
-    },
-    {
-      "link": "https://www.instagram.com/reel/DaxJqPIociC/",
-      "baslik": "Çınaraltı'nda huzur"
-    },
-    {
-      "link": "https://www.instagram.com/reel/DanHTmZIj9S/",
-      "baslik": "Doğayla iç içe"
-    },
-    {
-      "link": "https://www.instagram.com/reel/CZHXVCMllUn/",
-      "baslik": "Kültürpark'ta kış"
-    }
-  ]
+  "gun_bolumu": {
+    "ust_yazi": "Kültürpark'ta bir gün",
+    "baslik": "Gün boyu keyif, akşam ışıl ışıl",
+    "metin": "Sabah yürüyüşünden gece lunaparkına kadar parkın her saati ayrı güzel."
+  }
 }
