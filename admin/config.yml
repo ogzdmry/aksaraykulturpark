@@ -1,0 +1,142 @@
+# Aksaray Kültürpark yönetim paneli ayarları
+# backend bölümü DecapBridge panelinden alınan bilgilerle doldurulacak
+backend:
+  name: git-gateway
+  repo: ogzdmry/aksaraykulturpark
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/SITE_ID
+  gateway_url: https://gateway.decapbridge.com
+
+locale: tr
+site_url: https://aksaraykulturpark.com
+display_url: https://aksaraykulturpark.com
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: sayfa
+    label: "Site İçeriği"
+    editor: { preview: false }
+    files:
+      - name: site
+        label: "Kültürpark Ana Sayfa"
+        file: content/site.json
+        format: json
+        fields:
+          - label: "Genel Bilgiler"
+            name: genel
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Açık olduğu saatler (uzun)", name: saatler, widget: string, hint: "Örn: Her gün 10:00 – 23:00" }
+              - { label: "Saatler (kısa)", name: saat_kisa, widget: string, hint: "Örn: 10:00 – 23:00" }
+              - { label: "Adres (tam)", name: adres, widget: string }
+              - { label: "Adres (kısa)", name: adres_kisa, widget: string }
+              - { label: "Instagram kullanıcı adı", name: instagram, widget: string, hint: "@ işareti olmadan" }
+              - { label: "Alt bilgi yazısı", name: footer_metin, widget: text }
+
+          - label: "Üst Slaytlar"
+            name: slaytlar
+            widget: list
+            collapsed: true
+            summary: "{{fields.baslik}}"
+            hint: "İlk slayt sayfanın ana başlığıdır. Sürükleyerek sıralayabilirsiniz."
+            fields:
+              - { label: "Fotoğraf", name: gorsel, widget: image, choose_url: false }
+              - { label: "Üst yazı", name: ust_yazi, widget: string }
+              - { label: "Başlık", name: baslik, widget: string }
+              - { label: "Açıklama", name: metin, widget: text }
+              - &alan_secimi
+                label: "Bağlı alan"
+                name: alan
+                widget: relation
+                collection: sayfa
+                file: site
+                search_fields: ["alanlar.*.ad"]
+                value_field: "alanlar.*.id"
+                display_fields: ["alanlar.*.ad"]
+                required: false
+                hint: "Düğmeye tıklayınca hangi alanın açılacağını seçin."
+
+          - label: "Alanlar Bölümü Başlığı"
+            name: alanlar_bolumu
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Üst yazı", name: ust_yazi, widget: string }
+              - { label: "Başlık", name: baslik, widget: string }
+              - { label: "Açıklama", name: metin, widget: text }
+
+          - label: "Alanlarımız"
+            name: alanlar
+            widget: list
+            collapsed: true
+            summary: "{{fields.ad}}"
+            hint: "Yeni alan eklemek için 'Ekle'ye tıklayın."
+            fields:
+              - { label: "Alan adı", name: ad, widget: string }
+              - { label: "Kısa kod", name: id, widget: string, pattern: ["^[a-z0-9-]+$", "Sadece küçük harf (Türkçe karakter olmadan), rakam ve tire"], hint: "Örn: lunapark, cay, havuz. Yeni alanlarda adın sade hali (ör. sinema). Mevcut kodları değiştirmeyin." }
+              - { label: "Kısa açıklama", name: kisa, widget: string }
+              - { label: "Tanıtım yazısı", name: metin, widget: text }
+              - { label: "Öne çıkanlar (madde madde)", name: maddeler, widget: list, field: { label: "Madde", name: madde, widget: string } }
+              - { label: "Fotoğraflar", name: gorseller, widget: list, field: { label: "Fotoğraf", name: gorsel, widget: image, choose_url: false }, hint: "İlk fotoğraf büyük görünür. Boş bırakılırsa 'Fotoğraflar yakında' yazar." }
+              - { label: "Galeri kategorisi", name: kategori, widget: select, options: &kategoriler [{ label: "Eğlence", value: "eglence" }, { label: "Lezzet", value: "lezzet" }, { label: "Alışveriş", value: "alisveris" }, { label: "Dinlenme", value: "dinlenme" }, { label: "Havuz & Spor", value: "spor" }] }
+
+          - label: "'Bir Gün' Bölümü Başlığı"
+            name: gun_bolumu
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Üst yazı", name: ust_yazi, widget: string }
+              - { label: "Başlık", name: baslik, widget: string }
+              - { label: "Açıklama", name: metin, widget: text }
+
+          - label: "'Bir Gün' Kartları"
+            name: kartlar
+            widget: list
+            collapsed: true
+            summary: "{{fields.baslik}}"
+            fields:
+              - { label: "Fotoğraf", name: gorsel, widget: image, choose_url: false }
+              - { label: "Başlık", name: baslik, widget: string }
+              - { label: "Açıklama", name: metin, widget: string }
+              - *alan_secimi
+
+          - label: "Yeşil Alan Bölümü"
+            name: yesil_bolum
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Fotoğraf", name: gorsel, widget: image, choose_url: false }
+              - { label: "Üst yazı", name: ust_yazi, widget: string }
+              - { label: "Başlık", name: baslik, widget: string }
+              - { label: "Açıklama", name: metin, widget: text }
+              - { label: "Etiketler", name: etiketler, widget: list, field: { label: "Etiket", name: etiket, widget: string } }
+
+          - label: "Galeri"
+            name: galeri
+            widget: list
+            collapsed: true
+            summary: "{{fields.aciklama}}"
+            hint: "Yeni fotoğraf eklemek için 'Ekle'ye tıklayın. Üsttekiler önce görünür."
+            fields:
+              - { label: "Fotoğraf", name: gorsel, widget: image, choose_url: false }
+              - { label: "Açıklama", name: aciklama, widget: string }
+              - { label: "Kategori", name: kategori, widget: select, options: *kategoriler }
+              - { label: "Görünüm", name: boyut, widget: select, default: normal, options: [{ label: "Normal", value: normal }, { label: "Geniş (yatay fotoğraflar)", value: genis }, { label: "Uzun (dikey fotoğraflar)", value: uzun }] }
+
+          - label: "Videolar Bölümü Açıklaması"
+            name: videolar_bolumu
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Açıklama", name: metin, widget: text }
+
+          - label: "Instagram Videoları"
+            name: videolar
+            widget: list
+            collapsed: true
+            summary: "{{fields.baslik}}"
+            fields:
+              - { label: "Instagram video linki", name: link, widget: string, hint: "Instagram'da videonun 'Bağlantıyı kopyala' linkini yapıştırın" }
+              - { label: "Başlık", name: baslik, widget: string }
