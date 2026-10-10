@@ -25,8 +25,8 @@ auth:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 locale: tr
-site_url: https://kulturpark-web.pages.dev
-display_url: https://kulturpark-web.pages.dev
+site_url: https://aksaraykulturpark.com
+display_url: https://aksaraykulturpark.com
 media_folder: images
 public_folder: /images
 
