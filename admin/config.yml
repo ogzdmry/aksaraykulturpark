@@ -97,6 +97,18 @@ collections:
               - { label: "Tanıtım yazısı", name: metin, widget: text }
               - { label: "Öne çıkanlar (madde madde)", name: maddeler, widget: list, field: { label: "Madde", name: madde, widget: string } }
               - { label: "Fotoğraflar", name: gorseller, widget: list, field: { label: "Fotoğraf", name: gorsel, widget: image, choose_url: false }, hint: "İlk fotoğraf büyük görünür. Boş bırakılırsa 'Fotoğraflar yakında' yazar." }
+              - label: "İşletmeler (sekmeler)"
+                name: isletmeler
+                widget: list
+                required: false
+                collapsed: true
+                summary: "{{fields.ad}}"
+                hint: "İsteğe bağlı. Eklenen her işletme bu alanın içinde ayrı bir sekme olarak görünür (ör. çay bahçeleri, restoranlar)."
+                fields:
+                  - { label: "İşletme adı", name: ad, widget: string }
+                  - { label: "Tanıtım yazısı", name: metin, widget: text, required: false }
+                  - { label: "Telefon", name: telefon, widget: string, required: false, hint: "İsteğe bağlı. Örn: 0382 123 45 67" }
+                  - { label: "Fotoğraflar", name: gorseller, widget: list, required: false, field: { label: "Fotoğraf", name: gorsel, widget: image, choose_url: false }, hint: "İlk fotoğraf büyük görünür." }
               - { label: "Galeri kategorisi", name: kategori, widget: select, options: &kategoriler [{ label: "Eğlence", value: "eglence" }, { label: "Lezzet", value: "lezzet" }, { label: "Alışveriş", value: "alisveris" }, { label: "Dinlenme", value: "dinlenme" }, { label: "Havuz & Spor", value: "spor" }] }
 
           - label: "'Bir Gün' Bölümü Başlığı"
