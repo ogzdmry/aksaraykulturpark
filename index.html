@@ -117,8 +117,16 @@ section { padding-block: 88px }
 .tabs button:hover { border-color: var(--green); color: var(--green) }
 .tabs button[aria-selected="true"] { background: var(--green); border-color: var(--green); color: #fff }
 @media (max-width: 700px) { .tabs { flex-wrap: nowrap; justify-content: flex-start; margin-inline: -16px; padding-inline: 16px } }
-.panel { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; margin-top: 28px }
-.panel[hidden] { display: none }
+.panel { margin-top: 28px }
+.panel[hidden], .view[hidden] { display: none }
+.view { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center }
+.subtabs { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 0 0 22px; padding: 14px 16px; background: var(--tint); border-radius: 14px }
+.subtabs > span { font: 700 .75rem var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: 4px }
+.subtabs button { flex: none; font: 600 .88rem var(--body); padding: 8px 14px; border-radius: 999px; border: 1.5px solid transparent; background: #fff; color: var(--fg); cursor: pointer; transition: all .2s }
+.subtabs button:hover { border-color: var(--green); color: var(--green) }
+.subtabs button[aria-selected="true"] { background: var(--lamp); color: #fff; border-color: var(--lamp) }
+.view .tel { display: inline-flex; gap: 8px; align-items: center; margin-top: 18px; font-weight: 600; color: var(--green); text-decoration: none }
+@media (max-width: 700px) { .subtabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: -16px; border-radius: 0; padding-inline: 16px } }
 .panel .media { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--tint) }
 .panel .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: fade .6s ease }
 @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
@@ -139,7 +147,7 @@ section { padding-block: 88px }
 .soon svg { width: 46px; opacity: .6; margin: 0 auto 10px }
 .soon b { font: 800 1.4rem var(--display); display: block }
 .soon span { opacity: .8; font-size: .95rem }
-@media (max-width: 860px) { .panel { grid-template-columns: 1fr; gap: 24px } }
+@media (max-width: 860px) { .view { grid-template-columns: 1fr; gap: 24px } }
 
 /* Experience cards */
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px }
@@ -379,7 +387,7 @@ function slug(t) { return String(t || "").toLocaleLowerCase("tr").replace(/ç/g,
 function getK(o, path) { return path.split(".").reduce(function (x, k) { return x == null ? x : x[k]; }, o); }
 fetch("/content/site.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (C) {
   SLIDES = (C.slaytlar || []).map(function (s, i) { return { img: s.gorsel, tag: s.ust_yazi || "", title: s.baslik || "", text: s.metin || "", area: s.alan || "", h1: i === 0 }; });
-  AREAS = (C.alanlar || []).map(function (a) { return { id: a.id ? slug(a.id) : slug(a.ad), name: a.ad, short: a.kisa || "", text: a.metin || "", list: a.maddeler || [], imgs: (a.gorseller || []).filter(Boolean), cat: a.kategori || "eglence" }; });
+  AREAS = (C.alanlar || []).map(function (a) { return { id: a.id ? slug(a.id) : slug(a.ad), name: a.ad, short: a.kisa || "", text: a.metin || "", list: a.maddeler || [], imgs: (a.gorseller || []).filter(Boolean), cat: a.kategori || "eglence", biz: (a.isletmeler || []).filter(function (b) { return b && b.ad; }).map(function (b) { return { name: b.ad, text: b.metin || "", tel: b.telefon || "", imgs: (b.gorseller || []).filter(Boolean) }; }) }; });
   CARDS = (C.kartlar || []).map(function (c) { return { img: c.gorsel, title: c.baslik || "", text: c.metin || "", area: c.alan || "" }; });
   GALLERY = (C.galeri || []).filter(function (g) { return g.gorsel; }).map(function (g) { return [g.gorsel, g.aciklama || "", g.kategori || "eglence", { genis: "w", uzun: "t" }[g.boyut] || ""]; });
   REELS = (C.videolar || []).map(function (v) { var m = String(v.link || "").match(/instagram\.com\/(?:reel|reels|p)\/([\w-]+)/); return m ? [m[1], v.baslik || ""] : null; }).filter(Boolean);
@@ -429,18 +437,30 @@ document.getElementById("next").onclick = function () { go(cur + 1); };
 go(0);
 
 /* Areas: tabs + dropdown + footer */
+function mediaHTML(imgs, name) {
+  return '<div>' + (imgs.length
+    ? '<div class="media"><img src="' + imgs[0] + '" alt="' + esc(name) + '" loading="lazy"></div>' +
+      (imgs.length > 1 ? '<div class="thumbs">' + imgs.map(function (s, k) { return '<button type="button" aria-label="Fotoğraf ' + (k + 1) + '" aria-current="' + (k === 0) + '" data-src="' + s + '"><img src="' + s + '" alt="" loading="lazy"></button>'; }).join("") + '</div>' : "")
+    : '<div class="media"><div class="soon"><div>' + CAM + '<b>' + esc(name) + '</b><span>Fotoğraflar yakında eklenecek</span></div></div></div>') + '</div>';
+}
 var tabs = document.getElementById("tabs"), panels = document.getElementById("panels"), ddPanel = document.getElementById("ddPanel"), fAreas = document.getElementById("fAreas");
 AREAS.forEach(function (a, i) {
   var tb = el("button", { type: "button", role: "tab", id: "tab-" + a.id, "aria-controls": "alan-" + a.id, "aria-selected": i === 0 ? "true" : "false" }, esc(a.name));
   tb.onclick = function () { showArea(a.id, false); };
   tabs.appendChild(tb);
-  var media = a.imgs.length
-    ? '<div class="media"><img src="' + a.imgs[0] + '" alt="' + esc(a.name) + '" loading="lazy"></div>' +
-      (a.imgs.length > 1 ? '<div class="thumbs">' + a.imgs.map(function (s, k) { return '<button type="button" aria-label="Fotoğraf ' + (k + 1) + '" aria-current="' + (k === 0) + '" data-src="' + s + '"><img src="' + s + '" alt="" loading="lazy"></button>'; }).join("") + '</div>' : "")
-    : '<div class="media"><div class="soon"><div>' + CAM + '<b>' + esc(a.name) + '</b><span>Fotoğraflar yakında eklenecek</span></div></div></div>';
-  var p = el("div", { "class": "panel", role: "tabpanel", id: "alan-" + a.id, "aria-labelledby": "tab-" + a.id },
-    '<div>' + media + '</div><div class="txt"><small>' + esc(a.short) + '</small><h3>' + esc(a.name) + '</h3><p>' + esc(a.text) + '</p><ul>' + a.list.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + '</ul>' +
-    '<a class="btn g" href="#galeri" data-cat="' + a.cat + '">Galeride gör</a></div>');
+  var views = '<div class="view" data-v="0">' + mediaHTML(a.imgs, a.name) + '<div class="txt"><small>' + esc(a.short) + '</small><h3>' + esc(a.name) + '</h3><p>' + esc(a.text) + '</p><ul>' + a.list.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + '</ul>' +
+    '<a class="btn g" href="#galeri" data-cat="' + a.cat + '">Galeride gör</a></div></div>';
+  var sub = "";
+  if (a.biz.length) {
+    sub = '<div class="subtabs" role="tablist" aria-label="' + esc(a.name) + '"><span>' + esc(a.name) + ':</span><button type="button" role="tab" aria-selected="true" data-v="0">Tümü</button>' +
+      a.biz.map(function (b, k) { return '<button type="button" role="tab" aria-selected="false" data-v="' + (k + 1) + '">' + esc(b.name) + '</button>'; }).join("") + '</div>';
+    views += a.biz.map(function (b, k) {
+      return '<div class="view" data-v="' + (k + 1) + '" hidden>' + mediaHTML(b.imgs, b.name) + '<div class="txt"><small>' + esc(a.name) + '</small><h3>' + esc(b.name) + '</h3>' +
+        (b.text ? '<p>' + esc(b.text) + '</p>' : '<p>' + esc(b.name) + ', Kültürpark ' + esc(a.name.toLocaleLowerCase("tr")) + ' arasında. Ayrıntılı bilgi yakında eklenecek.</p>') +
+        (b.tel ? '<a class="tel" href="tel:' + esc(b.tel.replace(/[^0-9+]/g, "")) + '">&#9742; ' + esc(b.tel) + '</a>' : "") + '</div></div>';
+    }).join("");
+  }
+  var p = el("div", { "class": "panel", role: "tabpanel", id: "alan-" + a.id, "aria-labelledby": "tab-" + a.id }, sub + views);
   if (i !== 0) p.hidden = true;
   panels.appendChild(p);
   ddPanel.appendChild(el("a", { href: "#alan-" + a.id }, "<b></b>" + esc(a.name)));
@@ -448,7 +468,11 @@ AREAS.forEach(function (a, i) {
 });
 panels.addEventListener("click", function (e) {
   var t = e.target.closest(".thumbs button");
-  if (t) { var pnl = t.closest(".panel"), img = pnl.querySelector(".media img"); img.src = t.dataset.src; img.style.animation = "none"; void img.offsetWidth; img.style.animation = "";
+  var st = e.target.closest(".subtabs button");
+  if (st) { var pn = st.closest(".panel");
+    pn.querySelectorAll(".subtabs button").forEach(function (b) { b.setAttribute("aria-selected", b === st); });
+    pn.querySelectorAll(".view").forEach(function (v) { v.hidden = v.dataset.v !== st.dataset.v; }); return; }
+  if (t) { var pnl = t.closest(".view"), img = pnl.querySelector(".media img"); img.src = t.dataset.src; img.style.animation = "none"; void img.offsetWidth; img.style.animation = "";
     pnl.querySelectorAll(".thumbs button").forEach(function (b) { b.setAttribute("aria-current", b === t); }); }
   var g = e.target.closest("[data-cat]"); if (g) setFilter(g.dataset.cat);
 });
