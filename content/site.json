@@ -112,7 +112,55 @@
         "/images/cinaralti.jpg",
         "/images/cay-tente.webp"
       ],
-      "kategori": "dinlenme"
+      "kategori": "dinlenme",
+      "isletmeler": [
+        {
+          "ad": "Emirgan",
+          "metin": "",
+          "gorseller": []
+        },
+        {
+          "ad": "Yakamoz",
+          "metin": "",
+          "gorseller": []
+        },
+        {
+          "ad": "Nostalji Kafe",
+          "metin": "",
+          "gorseller": []
+        },
+        {
+          "ad": "Değirmen",
+          "metin": "",
+          "gorseller": [
+            "/images/degirmen.jpg"
+          ]
+        },
+        {
+          "ad": "Çınaraltı",
+          "metin": "",
+          "gorseller": [
+            "/images/cinaralti.jpg"
+          ]
+        },
+        {
+          "ad": "Kahverengi",
+          "metin": "",
+          "gorseller": [
+            "/images/kahverengi-gece.jpg"
+          ]
+        },
+        {
+          "ad": "Atlıhan",
+          "metin": "",
+          "gorseller": []
+        },
+        {
+          "ad": "Sağlık-Et",
+          "metin": "",
+          "gorseller": []
+        }
+      ]
     },
     {
       "id": "sokak",
@@ -175,7 +223,36 @@
         "/images/restoran-salon.webp",
         "/images/izgara.jpg"
       ],
-      "kategori": "lezzet"
+      "kategori": "lezzet",
+      "isletmeler": [
+        {
+          "ad": "Damla",
+          "metin": "",
+          "gorseller": [
+            "/images/damla.jpg"
+          ]
+        },
+        {
+          "ad": "Çorbacım",
+          "metin": "",
+          "gorseller": []
+        },
+        {
+          "ad": "Pilav Ustası",
+          "metin": "",
+          "gorseller": []
+        },
+        {
+          "ad": "Gece Dönercisi",
+          "metin": "",
+          "gorseller": []
+        },
+        {
+          "ad": "Ankara Çiftlik Kokoreç",
+          "metin": "",
+          "gorseller": []
+        }
+      ]
     },
     {
       "id": "ticaret",
