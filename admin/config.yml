@@ -154,6 +154,29 @@ collections:
               - { label: "Kategori", name: kategori, widget: select, options: *kategoriler }
               - { label: "Görünüm", name: boyut, widget: select, default: normal, options: [{ label: "Normal", value: normal }, { label: "Geniş (yatay fotoğraflar)", value: genis }, { label: "Uzun (dikey fotoğraflar)", value: uzun }] }
 
+          - label: "Ziyaretçi Kareleri Bölümü"
+            name: kareler_bolumu
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Üst yazı", name: ust_yazi, widget: string }
+              - { label: "Başlık", name: baslik, widget: string }
+              - { label: "Açıklama", name: metin, widget: text }
+              - { label: "Instagram etiketi", name: etiket, widget: string, hint: "# işareti olmadan, Türkçe karakter ve boşluk kullanmadan. Örn: kulturparktabirkare" }
+
+          - label: "Ziyaretçi Kareleri"
+            name: ziyaretci_kareleri
+            widget: list
+            collapsed: true
+            summary: "{{fields.not}}"
+            hint: "Ziyaretçilerden gelen kareler. Üsttekiler önce görünür. 'Haftanın karesi' işaretli olan büyük gösterilir (birden fazla işaretlenirse en üstteki)."
+            fields:
+              - { label: "Fotoğraf", name: gorsel, widget: image, choose_url: false }
+              - { label: "Kısa not", name: not, widget: string, hint: "Polaroidin altına el yazısıyla yazılır. Örn: Gece yeşile bürünen yol" }
+              - { label: "Gönderen", name: gonderen, widget: string, required: false, hint: "İsteğe bağlı. Örn: Ayşe K. veya @kullaniciadi (izin alınarak)" }
+              - { label: "Çekildiği alan", name: alan, widget: string, required: false, hint: "Örn: Lunapark, Çay Bahçeleri" }
+              - { label: "Haftanın karesi", name: haftanin_karesi, widget: boolean, default: false, required: false }
+
           - label: "Videolar Bölümü Açıklaması"
             name: videolar_bolumu
             widget: object
