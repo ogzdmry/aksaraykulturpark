@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#17803D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap">
 <style>
 :root {
   --bg: #FFFFFF;
@@ -188,6 +188,65 @@ section { padding-block: 88px }
 @media (max-width: 900px) { .wall { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px } }
 @media (hover: none) { .shot span { opacity: 1 } }
 
+/* Ziyaretçi kareleri (polaroid panosu) */
+.kareler { position: relative; overflow: hidden; color: #fff; padding-top: 112px;
+  background: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1.5px) 0 0 / 22px 22px, linear-gradient(160deg, #0F5E2C, #0B3F1F 70%) }
+.garland { position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 70px; pointer-events: none }
+.garland path { fill: none; stroke: rgba(255,255,255,.28); stroke-width: 1.5 }
+.garland circle { fill: #FFE2A8; filter: drop-shadow(0 0 5px rgba(255,200,110,.95)); animation: twinkle 2.6s ease-in-out infinite alternate }
+.garland circle:nth-child(odd) { animation-delay: 1.3s }
+@keyframes twinkle { from { opacity: .55 } to { opacity: 1 } }
+.k-top { display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: center; margin-bottom: 64px }
+.k-top .eyebrow { color: #FFD38A }
+.k-top h2 { font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 800 }
+.k-top p { color: rgba(255,255,255,.82); font-size: 1.08rem; margin: 16px 0 0; max-width: 46ch }
+.k-tag { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding: 8px 8px 8px 18px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1.5px dashed rgba(255,211,138,.7); font: 700 1.05rem var(--body); color: #FFD38A; cursor: pointer; max-width: 100%; overflow-wrap: anywhere }
+.k-tag small { font: 700 .78rem var(--body); color: #1E1405; background: #FFD38A; padding: 5px 12px; border-radius: 999px; white-space: nowrap }
+.k-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px }
+.btn.l { background: var(--lamp); color: #1E1405 } .btn.l:hover { background: #F2B85A }
+.feat { justify-self: center; position: relative; width: min(100%, 420px) }
+.feat .pola { width: 100%; margin: 0; --rot: -3deg }
+.feat .pola img { aspect-ratio: 4 / 5 }
+.badge { position: absolute; z-index: 6; top: -26px; right: -18px; width: 100px; height: 100px; display: grid; place-items: center; text-align: center; transform: rotate(12deg);
+  color: #1E1405; font: 800 .8rem/1.1 var(--display); filter: drop-shadow(0 8px 14px rgba(0,0,0,.35)); animation: wobble 4s ease-in-out infinite }
+.badge::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--lamp);
+  clip-path: polygon(50% 0%,61% 11%,75% 7%,79% 21%,93% 25%,89% 39%,100% 50%,89% 61%,93% 75%,79% 79%,75% 93%,61% 89%,50% 100%,39% 89%,25% 93%,21% 79%,7% 75%,11% 61%,0% 50%,11% 39%,7% 25%,21% 21%,25% 7%,39% 11%) }
+.badge b { display: block; font-size: 1.4rem; line-height: 1 }
+@keyframes wobble { 0%,100% { transform: rotate(12deg) } 50% { transform: rotate(4deg) scale(1.05) } }
+.pano { columns: 4 220px; column-gap: 26px }
+.pola { display: inline-block; width: 100%; margin: 0 0 30px; break-inside: avoid; position: relative; border: 0; cursor: zoom-in; text-align: center; font: inherit;
+  background: #FFFDF7; padding: 12px 12px 0; border-radius: 3px; color: #2A2A2A; box-shadow: 0 2px 4px rgba(0,0,0,.18), 0 14px 30px rgba(0,0,0,.25);
+  transform: rotate(var(--rot, 0deg)); transition: transform .35s cubic-bezier(.3,1.5,.5,1), box-shadow .35s }
+.pola::before { content: ""; position: absolute; z-index: 2; top: -12px; left: 50%; width: 90px; height: 26px; transform: translateX(-50%) rotate(var(--tape, -4deg));
+  background: rgba(255,225,160,.75); box-shadow: 0 1px 2px rgba(0,0,0,.12) }
+.pola:nth-child(3n+2)::before { background: rgba(170,225,185,.75) } .pola:nth-child(3n)::before { background: rgba(255,190,170,.75) }
+.pola img { width: 100%; height: auto; object-fit: cover; border-radius: 1px; background: #e9e4d8 }
+.pola .yaz { display: block; padding: 10px 4px 14px; font: 700 1.45rem/1.1 "Caveat", cursive; color: #26332B }
+.pola .kim { display: block; margin-top: 4px; font: 600 .76rem var(--body); color: #7A6F5C; letter-spacing: .02em }
+.pola:hover, .pola:focus-visible { transform: rotate(0) scale(1.04); box-shadow: 0 4px 8px rgba(0,0,0,.2), 0 26px 50px rgba(0,0,0,.35); z-index: 5; outline: none }
+.pola:focus-visible { box-shadow: 0 0 0 4px #FFD38A, 0 26px 50px rgba(0,0,0,.35) }
+.js-anim .pano .pola { opacity: 0; translate: 0 -40px }
+.js-anim .pano.in .pola { animation: drop .7s cubic-bezier(.3,1.4,.5,1) forwards; animation-delay: calc(var(--i, 0) * 70ms) }
+@keyframes drop { to { opacity: 1; translate: 0 0 } }
+.k-more { display: flex; justify-content: center; margin-top: 8px }
+.k-more[hidden] { display: none }
+.k-more .btn { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.7) }
+@media (max-width: 900px) { .k-top { grid-template-columns: 1fr; gap: 56px } .feat { order: 2; width: min(100% - 24px, 360px) } .pano { columns: 2 140px; column-gap: 16px } .pola { padding: 8px 8px 0; margin-bottom: 24px } .pola::before { width: 64px; height: 20px; top: -9px } .pola .yaz { font-size: 1.15rem; padding: 8px 2px 10px } .badge { width: 84px; height: 84px; right: -10px; font-size: .7rem } }
+@media (prefers-reduced-motion: reduce) { .js-anim .pano .pola { opacity: 1; translate: none } .js-anim .pano.in .pola, .badge, .garland circle { animation: none } .pola { transition: none } }
+/* Kareni gönder penceresi */
+.kmodal { border: 0; padding: 0; border-radius: 20px; width: min(560px, 100% - 32px); max-height: calc(100dvh - 32px); color: var(--fg); background: #fff; box-shadow: 0 30px 80px rgba(0,0,0,.4) }
+.kmodal::backdrop { background: rgba(6,20,12,.7); backdrop-filter: blur(3px) }
+.kmodal .in { padding: 32px 28px 28px; position: relative }
+.kmodal h3 { font-size: 1.8rem; color: var(--green); padding-right: 40px }
+.kmodal .x { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--tint); color: var(--fg); font-size: 1.05rem; cursor: pointer }
+.steps { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 16px; counter-reset: s }
+.steps li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; counter-increment: s }
+.steps li::before { content: counter(s); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--tint); color: var(--green); font: 800 1.2rem var(--display) }
+.steps b { display: block } .steps span { color: var(--muted); font-size: .95rem }
+.kmodal .k-btns { margin-top: 24px }
+.btn.o { background: #fff; color: var(--green); box-shadow: inset 0 0 0 1.5px var(--green) }
+.kmodal .izin { margin: 20px 0 0; font-size: .82rem; color: var(--muted) }
+
 /* Lightbox */
 .lb { position: fixed; inset: 0; z-index: 60; background: rgba(6,10,8,.94); display: grid; grid-template-rows: 1fr auto; padding: 16px }
 .lb[hidden] { display: none }
@@ -249,6 +308,7 @@ footer a { text-decoration: none } footer a:hover { color: #fff }
         <div class="dd-panel" id="ddPanel"></div>
       </div>
       <a href="#galeri">Galeri</a>
+      <a href="#kareler">Sizin Kareleriniz</a>
       <a href="#videolar">Videolar</a>
       <a href="#iletisim">İletişim</a>
       <a class="cta" href="https://www.google.com/maps/search/?api=1&amp;query=Aksaray%20K%C3%BClt%C3%BCrpark" target="_blank" rel="noopener">Yol Tarifi</a>
@@ -320,6 +380,44 @@ footer a { text-decoration: none } footer a:hover { color: #fff }
     </div>
   </section>
 
+  <section id="kareler" class="kareler" aria-labelledby="karelerT">
+    <svg class="garland" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4 Q100 92 200 4 T400 4 T600 4 T800 4 T1000 4 T1200 4"/><circle cx="25" cy="23.5" r="3.5"/><circle cx="75" cy="43.5" r="3.5"/><circle cx="125" cy="43.5" r="3.5"/><circle cx="175" cy="23.5" r="3.5"/><circle cx="225" cy="23.5" r="3.5"/><circle cx="275" cy="43.5" r="3.5"/><circle cx="325" cy="43.5" r="3.5"/><circle cx="375" cy="23.5" r="3.5"/><circle cx="425" cy="23.5" r="3.5"/><circle cx="475" cy="43.5" r="3.5"/><circle cx="525" cy="43.5" r="3.5"/><circle cx="575" cy="23.5" r="3.5"/><circle cx="625" cy="23.5" r="3.5"/><circle cx="675" cy="43.5" r="3.5"/><circle cx="725" cy="43.5" r="3.5"/><circle cx="775" cy="23.5" r="3.5"/><circle cx="825" cy="23.5" r="3.5"/><circle cx="875" cy="43.5" r="3.5"/><circle cx="925" cy="43.5" r="3.5"/><circle cx="975" cy="23.5" r="3.5"/><circle cx="1025" cy="23.5" r="3.5"/><circle cx="1075" cy="43.5" r="3.5"/><circle cx="1125" cy="43.5" r="3.5"/><circle cx="1175" cy="23.5" r="3.5"/></svg>
+    <div class="wrap">
+      <div class="k-top">
+        <div class="feat" id="feat"></div>
+        <div>
+          <div class="eyebrow" data-k="kareler_bolumu.ust_yazi">Sizin kareleriniz</div>
+          <h2 id="karelerT" data-k="kareler_bolumu.baslik">Kültürpark sizin gözünüzden</h2>
+          <p data-k="kareler_bolumu.metin">Parkta yakaladığınız en güzel anı bizimle paylaşın; seçilen kareler bu panoda yerini alsın.</p>
+          <button type="button" class="k-tag" data-copytag title="Etiketi kopyala"><span class="tagtxt">#kulturparktabirkare</span><small>Kopyala</small></button>
+          <div class="k-btns">
+            <button type="button" class="btn l" id="kGonder">📸 Kareni gönder</button>
+            <button type="button" class="btn w" id="kKaristir">🎲 Panoyu karıştır</button>
+          </div>
+        </div>
+      </div>
+      <div class="pano" id="pano"></div>
+      <div class="k-more" id="kMore" hidden><button class="btn" type="button">Daha fazla kare</button></div>
+    </div>
+  </section>
+
+  <dialog class="kmodal" id="kModal" aria-labelledby="kModalT">
+    <div class="in">
+      <button type="button" class="x" aria-label="Kapat" data-close>✕</button>
+      <h3 id="kModalT">Kareni panoya as!</h3>
+      <ol class="steps">
+        <li><div><b>Kareni yakala</b><span>Kültürpark'ta en sevdiğin anı fotoğrafla: bir manzara, bir lezzet ya da sevdiklerinle bir an.</span></div></li>
+        <li><div><b>Instagram'da paylaş</b><span><strong class="tagtxt">#kulturparktabirkare</strong> etiketini ekle ve <strong class="ightxt">@aksaraykulturpark</strong> hesabını etiketle. Hesabın gizliyse fotoğrafını bize DM ile gönder.</span></div></li>
+        <li><div><b>Panoda yerini al</b><span>Ekibimizin seçtiği kareler bu panoda yayınlanır. Belki bu haftanın karesi seninki olur!</span></div></li>
+      </ol>
+      <div class="k-btns">
+        <a class="btn g" data-ig href="https://www.instagram.com/aksaraykulturpark/" target="_blank" rel="noopener">Instagram'da aç</a>
+        <button type="button" class="btn o" data-copytag>Etiketi kopyala</button>
+      </div>
+      <p class="izin">Kareni bu etiketle paylaşarak ya da bize göndererek fotoğrafının sitede yayınlanmasına izin vermiş olursun. Yayından kaldırılmasını istersen bize yazman yeterli.</p>
+    </div>
+  </dialog>
+
   <section id="videolar">
     <div class="wrap">
       <div class="center-head">
@@ -381,7 +479,7 @@ footer a { text-decoration: none } footer a:hover { color: #fff }
 
 <script>
 /* İçerik /content/site.json dosyasından gelir (yönetim paneli: /admin) */
-var SLIDES, AREAS, CARDS, GALLERY, REELS;
+var SLIDES, AREAS, CARDS, GALLERY, REELS, KARELER, KTAG;
 var FILTERS = [["hepsi", "Hepsi"], ["eglence", "Eğlence"], ["lezzet", "Lezzet"], ["alisveris", "Alışveriş"], ["dinlenme", "Dinlenme"], ["spor", "Havuz & Spor"]];
 function slug(t) { return String(t || "").toLocaleLowerCase("tr").replace(/ç/g,"c").replace(/ğ/g,"g").replace(/ı/g,"i").replace(/ö/g,"o").replace(/ş/g,"s").replace(/ü/g,"u").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""); }
 function getK(o, path) { return path.split(".").reduce(function (x, k) { return x == null ? x : x[k]; }, o); }
@@ -390,6 +488,8 @@ fetch("/content/site.json", { cache: "no-cache" }).then(function (r) { return r.
   AREAS = (C.alanlar || []).map(function (a) { return { id: a.id ? slug(a.id) : slug(a.ad), name: a.ad, short: a.kisa || "", text: a.metin || "", list: a.maddeler || [], imgs: (a.gorseller || []).filter(Boolean), cat: a.kategori || "eglence", biz: (a.isletmeler || []).filter(function (b) { return b && b.ad; }).map(function (b) { return { name: b.ad, text: b.metin || "", tel: b.telefon || "", imgs: (b.gorseller || []).filter(Boolean) }; }) }; });
   CARDS = (C.kartlar || []).map(function (c) { return { img: c.gorsel, title: c.baslik || "", text: c.metin || "", area: c.alan || "" }; });
   GALLERY = (C.galeri || []).filter(function (g) { return g.gorsel; }).map(function (g) { return [g.gorsel, g.aciklama || "", g.kategori || "eglence", { genis: "w", uzun: "t" }[g.boyut] || ""]; });
+  KARELER = (C.ziyaretci_kareleri || []).filter(function (k) { return k && k.gorsel; }).map(function (k) { return { img: k.gorsel, note: k.not || "", who: k.gonderen || "", area: k.alan || "", star: !!k.haftanin_karesi }; });
+  KTAG = String((C.kareler_bolumu && C.kareler_bolumu.etiket) || "kulturparktabirkare").replace(/^#/, "").replace(/\s+/g, "");
   REELS = (C.videolar || []).map(function (v) { var m = String(v.link || "").match(/instagram\.com\/(?:reel|reels|p)\/([\w-]+)/); return m ? [m[1], v.baslik || ""] : null; }).filter(Boolean);
   document.querySelectorAll("[data-k]").forEach(function (n) { var v = getK(C, n.dataset.k); if (v != null && v !== "") n.textContent = v; });
   document.querySelectorAll("[data-img]").forEach(function (n) { var v = getK(C, n.dataset.img); if (v) n.src = v; });
@@ -503,7 +603,7 @@ function render() {
   visible = list.slice(0, limit); wall.innerHTML = "";
   visible.forEach(function (g, i) {
     var b = el("button", { type: "button", "class": "shot " + g[3] }, '<img src="' + g[0] + '" alt="' + esc(g[1]) + '" loading="lazy"><span>' + esc(g[1]) + "</span>");
-    b.onclick = function () { openLb(i); }; wall.appendChild(b);
+    b.onclick = function () { openLb(i, visible.map(function (g) { return [g[0], g[1]]; })); }; wall.appendChild(b);
   });
   moreBtn.parentElement.hidden = list.length <= limit;
 }
@@ -511,12 +611,12 @@ moreBtn.onclick = function () { limit += 12; render(); };
 render();
 
 /* Lightbox */
-var lb = document.getElementById("lb"), lbStage = document.getElementById("lbStage"), lbCap = document.getElementById("lbCap"), li = 0, lastFocus;
-function openLb(i) { lastFocus = document.activeElement; li = i; showLb(); lb.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("lbClose").focus(); }
-function showLb() { var g = visible[li]; lbStage.innerHTML = '<img src="' + g[0] + '" alt="' + esc(g[1]) + '">'; lbCap.textContent = g[1] + "  ·  " + (li + 1) + " / " + visible.length; }
+var lb = document.getElementById("lb"), lbStage = document.getElementById("lbStage"), lbCap = document.getElementById("lbCap"), li = 0, lastFocus, lbList = [];
+function openLb(i, list) { lbList = list; lastFocus = document.activeElement; li = i; showLb(); lb.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("lbClose").focus(); }
+function showLb() { var g = lbList[li]; lbStage.innerHTML = '<img src="' + g[0] + '" alt="' + esc(g[1]) + '">'; lbCap.textContent = g[1] + "  ·  " + (li + 1) + " / " + lbList.length; }
 function closeLb() { lb.hidden = true; document.body.style.overflow = ""; if (lastFocus) lastFocus.focus(); }
-document.getElementById("lbPrev").onclick = function () { li = (li - 1 + visible.length) % visible.length; showLb(); };
-document.getElementById("lbNext").onclick = function () { li = (li + 1) % visible.length; showLb(); };
+document.getElementById("lbPrev").onclick = function () { li = (li - 1 + lbList.length) % lbList.length; showLb(); };
+document.getElementById("lbNext").onclick = function () { li = (li + 1) % lbList.length; showLb(); };
 document.getElementById("lbClose").onclick = closeLb;
 lb.addEventListener("click", function (e) { if (e.target === lb || e.target === lbStage) closeLb(); });
 document.addEventListener("keydown", function (e) {
@@ -525,6 +625,59 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowRight") document.getElementById("lbNext").click();
   if (e.key === "ArrowLeft") document.getElementById("lbPrev").click();
 });
+
+/* Ziyaretçi kareleri */
+(function () {
+  var sec = document.getElementById("kareler"); if (!sec) return;
+  if (!KARELER.length) { sec.hidden = true; return; }
+  var pano = document.getElementById("pano"), feat = document.getElementById("feat"), more = document.getElementById("kMore");
+  var star = KARELER.filter(function (k) { return k.star; })[0] || KARELER[0];
+  var rest = KARELER.filter(function (k) { return k !== star; }), kLimit = 12, kShown = [];
+  function rnd(a, b) { return (Math.random() * (b - a) + a).toFixed(1) + "deg"; }
+  function kim(k) { return [k.who, k.area].filter(Boolean).join(" · "); }
+  function cap(k) { return k.note + (kim(k) ? "  ·  " + kim(k) : ""); }
+  function polaHTML(k) { return '<img src="' + esc(k.img) + '" alt="' + esc(k.note || "Ziyaretçi karesi") + '" loading="lazy"><span class="yaz">' + esc(k.note) + (kim(k) ? '<span class="kim">' + esc(kim(k)) + "</span>" : "") + "</span>"; }
+  var fb = el("button", { type: "button", "class": "pola", "aria-label": "Haftanın karesi: " + star.note }, polaHTML(star));
+  fb.onclick = function () { openLb(0, [[star.img, "★ Haftanın karesi: " + cap(star)]].concat(kShown.map(function (k) { return [k.img, cap(k)]; }))); };
+  feat.appendChild(el("div", { "class": "badge", "aria-hidden": "true" }, "<span><b>★</b>Haftanın<br>karesi</span>"));
+  feat.appendChild(fb);
+  function draw() {
+    kShown = rest.slice(0, kLimit); pano.innerHTML = "";
+    kShown.forEach(function (k, i) {
+      var b = el("button", { type: "button", "class": "pola", style: "--rot:" + rnd(-4.5, 4.5) + ";--tape:" + rnd(-8, 8) + ";--i:" + i }, polaHTML(k));
+      b.onclick = function () { openLb(i, kShown.map(function (x) { return [x.img, cap(x)]; })); };
+      pano.appendChild(b);
+    });
+    more.hidden = rest.length <= kLimit;
+  }
+  more.querySelector("button").onclick = function () { kLimit += 12; draw(); };
+  document.getElementById("kKaristir").onclick = function () {
+    for (var i = rest.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = rest[i]; rest[i] = rest[j]; rest[j] = t; }
+    pano.classList.remove("in"); draw(); void pano.offsetWidth; pano.classList.add("in");
+  };
+  draw();
+  if ("IntersectionObserver" in window) {
+    sec.classList.add("js-anim");
+    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { pano.classList.add("in"); io.disconnect(); } }, { threshold: 0.08 });
+    io.observe(pano);
+  }
+  /* Etiket ve gönder penceresi */
+  document.querySelectorAll(".tagtxt").forEach(function (n) { n.textContent = "#" + KTAG; });
+  var igh = (C.genel && C.genel.instagram || "aksaraykulturpark").replace(/^@/, "");
+  document.querySelectorAll(".ightxt").forEach(function (n) { n.textContent = "@" + igh; });
+  document.querySelectorAll("[data-copytag]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var lbl = b.querySelector("small") || b, old = lbl.textContent;
+      function done() { lbl.textContent = "Kopyalandı ✓"; setTimeout(function () { lbl.textContent = old; }, 1600); }
+      try { navigator.clipboard.writeText("#" + KTAG).then(done, function () {}); } catch (e) {}
+    });
+  });
+  var dlg = document.getElementById("kModal");
+  function closeDlg() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
+  document.getElementById("kGonder").onclick = function () { if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", ""); };
+  dlg.querySelector("[data-close]").onclick = closeDlg;
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) closeDlg(); });
+})();
 
 /* Reels */
 var reels = document.getElementById("reels");
