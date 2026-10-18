@@ -200,8 +200,9 @@ section { padding-block: 88px }
 .k-top .eyebrow { color: #FFD38A }
 .k-top h2 { font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 800 }
 .k-top p { color: rgba(255,255,255,.82); font-size: 1.08rem; margin: 16px 0 0; max-width: 46ch }
-.k-tag { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding: 8px 8px 8px 18px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1.5px dashed rgba(255,211,138,.7); font: 700 1.05rem var(--body); color: #FFD38A; cursor: pointer; max-width: 100%; overflow-wrap: anywhere }
-.k-tag small { font: 700 .78rem var(--body); color: #1E1405; background: #FFD38A; padding: 5px 12px; border-radius: 999px; white-space: nowrap }
+.k-iglink { display: inline-block; margin-top: 18px; font-size: .92rem; color: rgba(255,255,255,.75); text-decoration: none; overflow-wrap: anywhere }
+.k-iglink .tagtxt { color: #FFD38A; font-weight: 700 }
+.k-iglink:hover { color: #fff; text-decoration: underline }
 .k-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px }
 .btn.l { background: var(--lamp); color: #1E1405 } .btn.l:hover { background: #F2B85A }
 .feat { justify-self: center; position: relative; width: min(100%, 420px) }
@@ -239,13 +240,35 @@ section { padding-block: 88px }
 .kmodal .in { padding: 32px 28px 28px; position: relative }
 .kmodal h3 { font-size: 1.8rem; color: var(--green); padding-right: 40px }
 .kmodal .x { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--tint); color: var(--fg); font-size: 1.05rem; cursor: pointer }
-.steps { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 16px; counter-reset: s }
-.steps li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; counter-increment: s }
-.steps li::before { content: counter(s); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--tint); color: var(--green); font: 800 1.2rem var(--display) }
-.steps b { display: block } .steps span { color: var(--muted); font-size: .95rem }
-.kmodal .k-btns { margin-top: 24px }
+.k-alt { margin: 6px 0 18px; color: var(--muted); font-size: .95rem }
+.k-drop { position: relative; display: grid; place-items: center; min-height: 170px; border: 2px dashed #B9CBBE; border-radius: 16px; background: var(--tint); cursor: pointer; overflow: hidden; text-align: center; transition: border-color .2s, background .2s }
+.k-drop:hover, .k-drop.ust { border-color: var(--green); background: #E3EEE5 }
+.k-drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer }
+.k-drop-bos b { display: block; font-size: 1.1rem; color: var(--green) } .k-drop-bos small { color: var(--muted) }
+.k-drop img { width: 100%; max-height: 260px; object-fit: contain; background: #10261A }
+.k-drop.dolu { min-height: 0 } .k-drop.dolu .k-drop-bos { display: none }
+.k-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+.k-f { display: grid; gap: 6px; margin-top: 14px; font-weight: 600; font-size: .92rem }
+.k-f em { font-style: normal; font-weight: 500; color: var(--muted); float: right }
+.k-f input, .k-f select { font: 500 1rem var(--body); padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; color: var(--fg); width: 100% }
+.k-f input:focus, .k-f select:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(23,128,61,.15) }
+.k-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden }
+.k-izin { display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; font-size: .86rem; color: var(--muted); line-height: 1.45; cursor: pointer }
+.k-izin input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--green); flex: none }
+.k-durum { min-height: 1.3em; margin: 12px 0 0; font-size: .9rem; font-weight: 600; color: #B3261E }
+.k-durum.iyi { color: var(--green) }
+.k-gonder { width: 100%; justify-content: center; margin-top: 8px }
+.k-gonder[disabled] { opacity: .6; cursor: wait }
+.k-tamam { text-align: center; padding: 10px 0 4px }
+.k-tamam h3 { margin-top: 6px } .k-tamam p { color: var(--muted) }
+.k-konfeti { font-size: 3.2rem; animation: zipla .8s cubic-bezier(.3,1.6,.5,1) }
+@keyframes zipla { from { transform: scale(.2) rotate(-30deg); opacity: 0 } }
+.kmodal .k-btns { margin-top: 18px }
 .btn.o { background: #fff; color: var(--green); box-shadow: inset 0 0 0 1.5px var(--green) }
-.kmodal .izin { margin: 20px 0 0; font-size: .82rem; color: var(--muted) }
+.k-iglink-d { display: block; text-align: center; margin-top: 18px; color: var(--muted) }
+.k-iglink-d .tagtxt { color: var(--green) }
+.k-iglink-d:hover { color: var(--fg) }
+@media (max-width: 520px) { .k-row { grid-template-columns: 1fr; gap: 0 } .kmodal .in { padding: 26px 18px 20px } }
 
 /* Lightbox */
 .lb { position: fixed; inset: 0; z-index: 60; background: rgba(6,10,8,.94); display: grid; grid-template-rows: 1fr auto; padding: 16px }
@@ -389,11 +412,11 @@ footer a { text-decoration: none } footer a:hover { color: #fff }
           <div class="eyebrow" data-k="kareler_bolumu.ust_yazi">Sizin kareleriniz</div>
           <h2 id="karelerT" data-k="kareler_bolumu.baslik">Kültürpark sizin gözünüzden</h2>
           <p data-k="kareler_bolumu.metin">Parkta yakaladığınız en güzel anı bizimle paylaşın; seçilen kareler bu panoda yerini alsın.</p>
-          <button type="button" class="k-tag" data-copytag title="Etiketi kopyala"><span class="tagtxt">#kulturparktabirkare</span><small>Kopyala</small></button>
           <div class="k-btns">
             <button type="button" class="btn l" id="kGonder">📸 Kareni gönder</button>
-            <button type="button" class="btn w" id="kKaristir">🎲 Panoyu karıştır</button>
+            <button type="button" class="btn w" id="kKaristir">✨ Yeni kareler</button>
           </div>
+          <a class="k-iglink" id="kIgLink" href="https://www.instagram.com/explore/tags/kulturparktabirkare/" target="_blank" rel="noopener">Instagram'da da paylaşabilirsin: <span class="tagtxt">#kulturparktabirkare</span> →</a>
         </div>
       </div>
       <div class="pano" id="pano"></div>
@@ -404,17 +427,31 @@ footer a { text-decoration: none } footer a:hover { color: #fff }
   <dialog class="kmodal" id="kModal" aria-labelledby="kModalT">
     <div class="in">
       <button type="button" class="x" aria-label="Kapat" data-close>✕</button>
-      <h3 id="kModalT">Kareni panoya as!</h3>
-      <ol class="steps">
-        <li><div><b>Kareni yakala</b><span>Kültürpark'ta en sevdiğin anı fotoğrafla: bir manzara, bir lezzet ya da sevdiklerinle bir an.</span></div></li>
-        <li><div><b>Instagram'da paylaş</b><span><strong class="tagtxt">#kulturparktabirkare</strong> etiketini ekle ve <strong class="ightxt">@aksaraykulturpark</strong> hesabını etiketle. Hesabın gizliyse fotoğrafını bize DM ile gönder.</span></div></li>
-        <li><div><b>Panoda yerini al</b><span>Ekibimizin seçtiği kareler bu panoda yayınlanır. Belki bu haftanın karesi seninki olur!</span></div></li>
-      </ol>
-      <div class="k-btns">
-        <a class="btn g" data-ig href="https://www.instagram.com/aksaraykulturpark/" target="_blank" rel="noopener">Instagram'da aç</a>
-        <button type="button" class="btn o" data-copytag>Etiketi kopyala</button>
+      <form id="kForm" novalidate>
+        <h3 id="kModalT">Kareni panoya as!</h3>
+        <p class="k-alt">Fotoğrafın ekibimizin onayından sonra panoda yayınlanır.</p>
+        <label class="k-drop" id="kDrop">
+          <input type="file" id="kFoto" name="foto" accept="image/*" required>
+          <span class="k-drop-bos"><b>📷 Fotoğraf seç</b><small>ya da buraya sürükle · JPG, PNG, HEIC</small></span>
+          <img id="kOnizle" alt="Seçilen fotoğrafın önizlemesi" hidden>
+        </label>
+        <div class="k-row">
+          <label class="k-f"><span>Adın</span><input name="ad" id="kAd" maxlength="40" autocomplete="given-name" placeholder="Örn: Ayşe K." required></label>
+          <label class="k-f"><span>Çekildiği alan</span><select name="alan" id="kAlan" required><option value="">Seç…</option></select></label>
+        </div>
+        <label class="k-f"><span>Kısa açıklama <em id="kSay">0/90</em></span><input name="aciklama" id="kAcik" maxlength="90" placeholder="Örn: Gün batımında dönme dolap"></label>
+        <label class="k-hp" aria-hidden="true">Web sitesi <input name="web" tabindex="-1" autocomplete="off"></label>
+        <label class="k-izin"><input type="checkbox" id="kIzin" required> <span>Bu fotoğrafı ben çektim; adımla birlikte Kültürpark web sitesinde yayınlanmasına izin veriyorum. Fotoğrafta başka kişiler varsa onların da iznini aldım.</span></label>
+        <p class="k-durum" id="kDurum" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn g k-gonder" id="kGonderBtn">Onaya gönder</button>
+      </form>
+      <div class="k-tamam" id="kTamam" hidden>
+        <div class="k-konfeti" aria-hidden="true">🎉</div>
+        <h3>Teşekkürler!</h3>
+        <p>Karen bize ulaştı. Ekibimiz onayladığında panoda yerini alacak.</p>
+        <div class="k-btns" style="justify-content:center"><button type="button" class="btn g" id="kBirDaha">Bir kare daha gönder</button><button type="button" class="btn o" data-close>Kapat</button></div>
       </div>
-      <p class="izin">Kareni bu etiketle paylaşarak ya da bize göndererek fotoğrafının sitede yayınlanmasına izin vermiş olursun. Yayından kaldırılmasını istersen bize yazman yeterli.</p>
+      <a class="k-iglink k-iglink-d" href="https://www.instagram.com/explore/tags/kulturparktabirkare/" target="_blank" rel="noopener">Instagram'da paylaşmayı mı tercih edersin? <span class="tagtxt">#kulturparktabirkare</span></a>
     </div>
   </dialog>
 
@@ -629,18 +666,24 @@ document.addEventListener("keydown", function (e) {
 /* Ziyaretçi kareleri */
 (function () {
   var sec = document.getElementById("kareler"); if (!sec) return;
-  if (!KARELER.length) { sec.hidden = true; return; }
   var pano = document.getElementById("pano"), feat = document.getElementById("feat"), more = document.getElementById("kMore");
-  var star = KARELER.filter(function (k) { return k.star; })[0] || KARELER[0];
-  var rest = KARELER.filter(function (k) { return k !== star; }), kLimit = 12, kShown = [];
+  var star, rest = [], kLimit = 12, kShown = [];
   function rnd(a, b) { return (Math.random() * (b - a) + a).toFixed(1) + "deg"; }
   function kim(k) { return [k.who, k.area].filter(Boolean).join(" · "); }
   function cap(k) { return k.note + (kim(k) ? "  ·  " + kim(k) : ""); }
-  function polaHTML(k) { return '<img src="' + esc(k.img) + '" alt="' + esc(k.note || "Ziyaretçi karesi") + '" loading="lazy"><span class="yaz">' + esc(k.note) + (kim(k) ? '<span class="kim">' + esc(kim(k)) + "</span>" : "") + "</span>"; }
-  var fb = el("button", { type: "button", "class": "pola", "aria-label": "Haftanın karesi: " + star.note }, polaHTML(star));
-  fb.onclick = function () { openLb(0, [[star.img, "★ Haftanın karesi: " + cap(star)]].concat(kShown.map(function (k) { return [k.img, cap(k)]; }))); };
-  feat.appendChild(el("div", { "class": "badge", "aria-hidden": "true" }, "<span><b>★</b>Haftanın<br>karesi</span>"));
-  feat.appendChild(fb);
+  function polaHTML(k) { return '<img src="' + esc(k.img) + '" alt="' + esc(k.note || "Ziyaretçi karesi") + '" loading="lazy"><span class="yaz">' + esc(k.note || "Kültürpark'tan") + (kim(k) ? '<span class="kim">' + esc(kim(k)) + "</span>" : "") + "</span>"; }
+  function kur(list) {
+    if (!list.length) { sec.hidden = true; return; }
+    sec.hidden = false;
+    star = list.filter(function (k) { return k.star; })[0] || list[0];
+    rest = list.filter(function (k) { return k !== star; });
+    feat.innerHTML = "";
+    var fb = el("button", { type: "button", "class": "pola", "aria-label": "Haftanın karesi: " + star.note }, polaHTML(star));
+    fb.onclick = function () { openLb(0, [[star.img, "★ Haftanın karesi: " + cap(star)]].concat(kShown.map(function (k) { return [k.img, cap(k)]; }))); };
+    feat.appendChild(el("div", { "class": "badge", "aria-hidden": "true" }, "<span><b>★</b>Haftanın<br>karesi</span>"));
+    feat.appendChild(fb);
+    draw();
+  }
   function draw() {
     kShown = rest.slice(0, kLimit); pano.innerHTML = "";
     kShown.forEach(function (k, i) {
@@ -655,28 +698,90 @@ document.addEventListener("keydown", function (e) {
     for (var i = rest.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = rest[i]; rest[i] = rest[j]; rest[j] = t; }
     pano.classList.remove("in"); draw(); void pano.offsetWidth; pano.classList.add("in");
   };
-  draw();
+  kur(KARELER.slice());
   if ("IntersectionObserver" in window) {
     sec.classList.add("js-anim");
     var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { pano.classList.add("in"); io.disconnect(); } }, { threshold: 0.08 });
     io.observe(pano);
   }
-  /* Etiket ve gönder penceresi */
+  /* Onaylanan ziyaretçi kareleri (sunucudan) — en yeniler önde */
+  fetch("/api/kareler", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    if (!d || !d.kareler || !d.kareler.length) return;
+    var yeni = d.kareler.map(function (k) { return { img: k.img, note: k.not, who: k.gonderen, area: k.alan, star: k.yildiz }; });
+    var sunucuYildiz = yeni.some(function (k) { return k.star; });
+    var eski = KARELER.map(function (k) { return { img: k.img, note: k.note, who: k.who, area: k.area, star: sunucuYildiz ? false : k.star }; });
+    kur(yeni.concat(eski));
+    if (pano.classList.contains("in")) { pano.classList.remove("in"); void pano.offsetWidth; pano.classList.add("in"); }
+  }).catch(function () {});
+
+  /* Instagram etiketi */
   document.querySelectorAll(".tagtxt").forEach(function (n) { n.textContent = "#" + KTAG; });
-  var igh = (C.genel && C.genel.instagram || "aksaraykulturpark").replace(/^@/, "");
-  document.querySelectorAll(".ightxt").forEach(function (n) { n.textContent = "@" + igh; });
-  document.querySelectorAll("[data-copytag]").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var lbl = b.querySelector("small") || b, old = lbl.textContent;
-      function done() { lbl.textContent = "Kopyalandı ✓"; setTimeout(function () { lbl.textContent = old; }, 1600); }
-      try { navigator.clipboard.writeText("#" + KTAG).then(done, function () {}); } catch (e) {}
+  document.querySelectorAll(".k-iglink").forEach(function (a) { a.href = "https://www.instagram.com/explore/tags/" + encodeURIComponent(KTAG) + "/"; });
+
+  /* Kareni gönder formu */
+  var dlg = document.getElementById("kModal"), form = document.getElementById("kForm"), tamam = document.getElementById("kTamam");
+  var fIn = document.getElementById("kFoto"), drop = document.getElementById("kDrop"), onz = document.getElementById("kOnizle");
+  var durum = document.getElementById("kDurum"), gBtn = document.getElementById("kGonderBtn"), acik = document.getElementById("kAcik");
+  var alanSec = document.getElementById("kAlan"), hazirFoto = null;
+  AREAS.forEach(function (a) { alanSec.appendChild(el("option", { value: a.name }, esc(a.name))); });
+  alanSec.appendChild(el("option", { value: "Diğer" }, "Diğer"));
+  function mesaj(t, iyi) { durum.textContent = t || ""; durum.className = "k-durum" + (iyi ? " iyi" : ""); }
+  function sifirla() { form.reset(); hazirFoto = null; onz.hidden = true; onz.removeAttribute("src"); drop.classList.remove("dolu"); mesaj(""); document.getElementById("kSay").textContent = "0/90"; form.hidden = false; tamam.hidden = true; gBtn.disabled = false; gBtn.textContent = "Onaya gönder"; }
+  function ac() { sifirla(); if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", ""); }
+  function kapat() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
+  document.getElementById("kGonder").onclick = ac;
+  document.getElementById("kBirDaha").onclick = sifirla;
+  dlg.querySelectorAll("[data-close]").forEach(function (b) { b.onclick = kapat; });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) kapat(); });
+  acik.addEventListener("input", function () { document.getElementById("kSay").textContent = acik.value.length + "/90"; });
+  ["dragenter", "dragover"].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add("ust"); }); });
+  ["dragleave", "drop"].forEach(function (t) { drop.addEventListener(t, function () { drop.classList.remove("ust"); }); });
+  drop.addEventListener("drop", function (e) { e.preventDefault(); if (e.dataTransfer.files[0]) hazirla(e.dataTransfer.files[0]); });
+  fIn.addEventListener("change", function () { if (fIn.files[0]) hazirla(fIn.files[0]); });
+
+  /* Fotoğrafı tarayıcıda küçült (en uzun kenar 1600px, JPEG) — konum vb. bilgiler silinir */
+  function resimAc(file) {
+    if (window.createImageBitmap) return createImageBitmap(file, { imageOrientation: "from-image" }).catch(function () { return imgIle(file); });
+    return imgIle(file);
+  }
+  function imgIle(file) {
+    return new Promise(function (ok, no) { var u = URL.createObjectURL(file), im = new Image(); im.onload = function () { ok(im); }; im.onerror = function () { no(new Error("okunamadı")); }; im.src = u; });
+  }
+  function hazirla(file) {
+    mesaj("Fotoğraf hazırlanıyor…", true); hazirFoto = null;
+    if (!/^image\//.test(file.type) && !/\.(heic|heif)$/i.test(file.name)) { mesaj("Lütfen bir fotoğraf dosyası seçin."); return; }
+    if (file.size > 40 * 1024 * 1024) { mesaj("Bu dosya çok büyük (en fazla 40 MB)."); return; }
+    resimAc(file).then(function (im) {
+      var w = im.width, h = im.height, m = 1600 / Math.max(w, h);
+      if (m < 1) { w = Math.round(w * m); h = Math.round(h * m); }
+      if (w < 300 && h < 300) throw new Error("kucuk");
+      var c = document.createElement("canvas"); c.width = w; c.height = h;
+      var x = c.getContext("2d"); x.fillStyle = "#fff"; x.fillRect(0, 0, w, h); x.drawImage(im, 0, 0, w, h);
+      return new Promise(function (ok) { c.toBlob(function (b) { if (b && b.size > 2.8 * 1024 * 1024) c.toBlob(ok, "image/jpeg", 0.7); else ok(b); }, "image/jpeg", 0.85); });
+    }).then(function (blob) {
+      if (!blob) throw new Error("x");
+      hazirFoto = blob; onz.src = URL.createObjectURL(blob); onz.hidden = false; drop.classList.add("dolu"); mesaj("");
+    }).catch(function (e) {
+      mesaj(e && e.message === "kucuk" ? "Bu fotoğraf çok küçük; daha büyük bir fotoğraf seçin." : "Bu fotoğraf açılamadı. JPG veya PNG biçiminde bir fotoğraf deneyin.");
     });
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!hazirFoto) return mesaj("Lütfen bir fotoğraf seçin.");
+    if (!form.ad.value.trim()) { form.ad.focus(); return mesaj("Lütfen adını yaz."); }
+    if (!alanSec.value) { alanSec.focus(); return mesaj("Lütfen fotoğrafın çekildiği alanı seç."); }
+    if (!document.getElementById("kIzin").checked) return mesaj("Göndermek için yayın izni kutusunu işaretlemelisin.");
+    var fd = new FormData();
+    fd.append("foto", hazirFoto, "kare.jpg"); fd.append("ad", form.ad.value); fd.append("alan", alanSec.value);
+    fd.append("aciklama", acik.value); fd.append("izin", "evet"); fd.append("web", form.web.value);
+    gBtn.disabled = true; gBtn.textContent = "Gönderiliyor…"; mesaj("");
+    fetch("/api/gonder", { method: "POST", body: fd }).then(function (r) {
+      return r.json().catch(function () { return { ok: false, hata: "Sunucuya ulaşılamadı." }; });
+    }).then(function (d) {
+      if (d && d.ok) { form.hidden = true; tamam.hidden = false; return; }
+      mesaj((d && d.hata) || "Gönderilemedi, lütfen tekrar deneyin."); gBtn.disabled = false; gBtn.textContent = "Onaya gönder";
+    }).catch(function () { mesaj("Bağlantı sorunu oluştu, lütfen tekrar deneyin."); gBtn.disabled = false; gBtn.textContent = "Onaya gönder"; });
   });
-  var dlg = document.getElementById("kModal");
-  function closeDlg() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
-  document.getElementById("kGonder").onclick = function () { if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", ""); };
-  dlg.querySelector("[data-close]").onclick = closeDlg;
-  dlg.addEventListener("click", function (e) { if (e.target === dlg) closeDlg(); });
 })();
 
 /* Reels */
