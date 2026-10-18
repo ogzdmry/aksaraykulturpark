@@ -542,5 +542,90 @@
     "ust_yazi": "Kültürpark'ta bir gün",
     "baslik": "Gün boyu keyif, akşam ışıl ışıl",
     "metin": "Sabah yürüyüşünden gece lunaparkına kadar parkın her saati ayrı güzel."
-  }
+  },
+  "kareler_bolumu": {
+    "ust_yazi": "Sizin kareleriniz",
+    "baslik": "Kültürpark sizin gözünüzden",
+    "metin": "Parkta yakaladığınız en güzel anı bizimle paylaşın; seçilen kareler bu panoda yerini alsın. Belki bu haftanın karesi sizinki olur!",
+    "etiket": "kulturparktabirkare"
+  },
+  "ziyaretci_kareleri": [
+    {
+      "gorsel": "/images/ziyaretci-yesil-gece.webp",
+      "not": "Gece yeşile bürünen yol",
+      "gonderen": "",
+      "alan": "Yürüyüş Yolları",
+      "haftanin_karesi": true
+    },
+    {
+      "gorsel": "/images/ziyaretci-keci.webp",
+      "not": "Objektife poz veren keçi",
+      "gonderen": "",
+      "alan": "Hayvanat Bahçesi",
+      "haftanin_karesi": false
+    },
+    {
+      "gorsel": "/images/ziyaretci-semaver.webp",
+      "not": "Semaver hazır, ışıklar yandı",
+      "gonderen": "",
+      "alan": "Çay Bahçeleri",
+      "haftanin_karesi": false
+    },
+    {
+      "gorsel": "/images/ziyaretci-kemerler.webp",
+      "not": "El ele, kemerlerin altında",
+      "gonderen": "",
+      "alan": "Yürüyüş Yolları",
+      "haftanin_karesi": false
+    },
+    {
+      "gorsel": "/images/ziyaretci-gul.webp",
+      "not": "Sonbaharda açan tek gül",
+      "gonderen": "",
+      "alan": "Yürüyüş Yolları",
+      "haftanin_karesi": false
+    },
+    {
+      "gorsel": "/images/ziyaretci-kecici.webp",
+      "not": "Yeni arkadaşım",
+      "gonderen": "",
+      "alan": "Hayvanat Bahçesi",
+      "haftanin_karesi": false
+    },
+    {
+      "gorsel": "/images/ziyaretci-yansima.webp",
+      "not": "Su birikintisinde sonbahar",
+      "gonderen": "",
+      "alan": "Yürüyüş Yolları",
+      "haftanin_karesi": false
+    },
+    {
+      "gorsel": "/images/ziyaretci-fotograf-avi.webp",
+      "not": "Kültürpark'ta fotoğraf avı",
+      "gonderen": "",
+      "alan": "Yürüyüş Yolları",
+      "haftanin_karesi": false
+    },
+    {
+      "gorsel": "/images/ziyaretci-atesdikeni.webp",
+      "not": "Ateş dikeninin turuncusu",
+      "gonderen": "",
+      "alan": "Yürüyüş Yolları",
+      "haftanin_karesi": false
+    },
+    {
+      "gorsel": "/images/ziyaretci-muzik.webp",
+      "not": "Kulağımda müzik, ayağımda yaprak",
+      "gonderen": "",
+      "alan": "Yürüyüş Yolları",
+      "haftanin_karesi": false
+    },
+    {
+      "gorsel": "/images/ziyaretci-yuruyus.webp",
+      "not": "Sabah yürüyüşü",
+      "gonderen": "",
+      "alan": "Yürüyüş Yolları",
+      "haftanin_karesi": false
+    }
+  ]
 }
