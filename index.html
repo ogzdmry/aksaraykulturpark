@@ -246,6 +246,7 @@ section { padding-block: 88px }
 .k-drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer }
 .k-drop-bos b { display: block; font-size: 1.1rem; color: var(--green) } .k-drop-bos small { color: var(--muted) }
 .k-drop img { width: 100%; max-height: 260px; object-fit: contain; background: #10261A }
+.k-drop img[hidden] { display: none }
 .k-drop.dolu { min-height: 0 } .k-drop.dolu .k-drop-bos { display: none }
 .k-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
 .k-f { display: grid; gap: 6px; margin-top: 14px; font-weight: 600; font-size: .92rem }
@@ -316,6 +317,35 @@ footer a { text-decoration: none } footer a:hover { color: #fff }
 .ig-fab { position: fixed; right: 18px; bottom: 18px; z-index: 30; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; color: #fff;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 8px 24px rgba(0,0,0,.25) }
 .ig-fab svg { width: 28px }
+
+/* Sizin Kareleriniz vurgusu */
+.menu > a.kare-pill { position: relative; background: var(--lamp); color: #1d1405; border-radius: 999px; padding: 9px 16px 9px 13px; margin-inline: 4px; box-shadow: 0 3px 0 #C9821A; transition: transform .15s, box-shadow .15s }
+.menu > a.kare-pill:hover { background: #F0B451; transform: translateY(-1px); box-shadow: 0 4px 0 #C9821A }
+.kare-pill svg { width: 18px }
+.kdot { position: absolute; top: -3px; right: -3px; width: 12px; height: 12px; border-radius: 50%; background: #E2372B; border: 2px solid #fff }
+.kdot::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid #E2372B; animation: kping 1.6s infinite }
+.kdot.gordu { display: none }
+@keyframes kping { to { transform: scale(2.3); opacity: 0 } }
+.menu > a.m-kart, .tabbar { display: none }
+@media (max-width: 900px) {
+  .menu > a.kare-pill { display: none }
+  .menu > a.m-kart { display: block; border-bottom: 0; width: auto; position: relative; overflow: hidden; margin: 8px 0 6px; padding: 18px; border-radius: 16px; color: #fff; text-decoration: none; background: linear-gradient(135deg, var(--green-dk), var(--green)) }
+  .m-kart small { color: var(--lamp); font-weight: 800; letter-spacing: .08em; font-size: .72rem; text-transform: uppercase }
+  .m-kart b { display: block; font: 800 1.35rem/1.1 var(--display); margin: 4px 0 12px }
+  .m-kart span { display: inline-block; background: var(--lamp); color: #1d1405; font-weight: 800; border-radius: 999px; padding: 7px 14px; font-size: .9rem }
+  .m-kart svg { position: absolute; right: -10px; bottom: -18px; width: 110px; opacity: .18; transform: rotate(-12deg) }
+  .tabbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 35; height: 64px; padding-bottom: env(safe-area-inset-bottom); background: #fff; border-top: 1px solid var(--line); box-shadow: 0 -6px 20px rgba(0,0,0,.06); justify-content: space-around; align-items: center; box-sizing: content-box }
+  .tabbar a, .tabbar button { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; font: 600 .68rem var(--body); color: var(--muted); text-decoration: none; background: none; border: 0; padding: 0; cursor: pointer }
+  .tabbar a svg { width: 22px }
+  .tabbar .t-cam { position: relative; top: -16px; color: var(--fg); font-weight: 800; font-size: .72rem }
+  .t-cam i { width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; background: var(--lamp); color: #1d1405; border: 5px solid #fff; box-shadow: 0 6px 18px rgba(232,163,58,.55); animation: kbob 2.4s ease-in-out infinite }
+  .t-cam i svg { width: 28px }
+  @keyframes kbob { 50% { transform: translateY(-3px) } }
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom)) }
+  .ig-fab { bottom: calc(80px + env(safe-area-inset-bottom)); width: 48px; height: 48px }
+  .ig-fab svg { width: 24px }
+}
+@media (prefers-reduced-motion: reduce) { .kdot::after, .t-cam i { animation: none } }
 </style>
 </head>
 <body>
@@ -331,7 +361,8 @@ footer a { text-decoration: none } footer a:hover { color: #fff }
         <div class="dd-panel" id="ddPanel"></div>
       </div>
       <a href="#galeri">Galeri</a>
-      <a href="#kareler">Sizin Kareleriniz</a>
+      <a href="#kareler" class="m-kart" data-kgonder><small>Sizin kareleriniz</small><b>Sen çek,<br>biz yayınlayalım!</b><span>📸 Kareni gönder</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></a>
+      <a href="#kareler" class="kare-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Sizin Kareleriniz<span class="kdot" id="kdot"></span></a>
       <a href="#videolar">Videolar</a>
       <a href="#iletisim">İletişim</a>
       <a class="cta" href="https://www.google.com/maps/search/?api=1&amp;query=Aksaray%20K%C3%BClt%C3%BCrpark" target="_blank" rel="noopener">Yol Tarifi</a>
@@ -507,6 +538,13 @@ footer a { text-decoration: none } footer a:hover { color: #fff }
   </div>
 </footer>
 
+<nav class="tabbar" aria-label="Hızlı menü">
+  <a href="#anasayfa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"/></svg>Ana Sayfa</a>
+  <a href="#alanlar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="10" r="6"/><path d="M12 4v12M6 10h12M8 21l4-5 4 5"/></svg>Alanlar</a>
+  <a href="#kareler" class="t-cam" data-kgonder><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></i>Sen çek!</a>
+  <a href="#galeri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 16l5-5 4 4 3-3 6 6"/></svg>Galeri</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=Aksaray%20K%C3%BClt%C3%BCrpark" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Yol Tarifi</a>
+</nav>
 <a class="ig-fab" data-ig href="https://www.instagram.com/aksaraykulturpark/" target="_blank" rel="noopener" aria-label="Instagram'da takip et"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Fotoğraf görüntüleyici">
@@ -552,6 +590,10 @@ burger.addEventListener("click", function () { var o = hdr.classList.toggle("men
 dd.querySelector("button").addEventListener("click", function (e) { e.stopPropagation(); var o = dd.classList.toggle("open"); this.setAttribute("aria-expanded", o); });
 document.addEventListener("click", function (e) { if (!dd.contains(e.target)) { dd.classList.remove("open"); dd.querySelector("button").setAttribute("aria-expanded", "false"); } });
 document.getElementById("menu").addEventListener("click", function (e) { if (e.target.closest("a")) { hdr.classList.remove("menu-open"); dd.classList.remove("open"); } });
+
+/* Sizin Kareleriniz nokta: bir kez tıklayınca söner */
+(function () { var d = document.getElementById("kdot"); if (!d) return; try { if (localStorage.getItem("kGordu")) d.classList.add("gordu"); } catch (e) {}
+  d.parentNode.addEventListener("click", function () { d.classList.add("gordu"); try { localStorage.setItem("kGordu", "1"); } catch (e) {} }); })();
 
 /* Hero slider */
 var slidesBox = document.getElementById("slides"), dotsBox = document.getElementById("dots"), cur = 0, timer;
@@ -730,6 +772,7 @@ document.addEventListener("keydown", function (e) {
   function ac() { sifirla(); if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", ""); }
   function kapat() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
   document.getElementById("kGonder").onclick = ac;
+  document.querySelectorAll("[data-kgonder]").forEach(function (b) { b.addEventListener("click", function (e) { e.preventDefault(); hdr.classList.remove("menu-open"); burger.setAttribute("aria-expanded", "false"); ac(); }); });
   document.getElementById("kBirDaha").onclick = sifirla;
   dlg.querySelectorAll("[data-close]").forEach(function (b) { b.onclick = kapat; });
   dlg.addEventListener("click", function (e) { if (e.target === dlg) kapat(); });
